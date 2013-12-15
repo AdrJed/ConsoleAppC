@@ -1,0 +1,34 @@
+3.1.	Napisz program, który wczyta dwie liczby rzeczywiste a i b i wyœwietli wyniki operacji arytmetycznych: a+b, a-b, a*b, a/b.
+3.2. Napisz program sprawdzaj¹cy, czy wprowadzona przez u¿ytkownika liczba ca³kowita jest liczb¹ podzieln¹ przez 2 (tzn. czy jest parzysta).
+3.3. Napisz program sprawdzaj¹cy, czy wprowadzona przez u¿ytkownika liczba ca³kowita jest liczb¹ pierwsz¹.
+3.4. Napisz program wyœwietlaj¹cy na ekranie tabliczkê mno¿enia o wymiarach N x N, gdzie wartoœæ ca³kowit¹ N podaje u¿ytkownik.
+3.5. Napisz program wyznaczaj¹cy miejsca zerowe wielomianu stopnia 2 (paraboli). Do obliczania pierwiastka wykorzystaj algorytm Herona z wyk³adu.
+3.6. Napisz program wyznaczaj¹cy pole trójk¹ta dla podanych wartoœci podstawy a i wysokoœci h.
+3.7. Napisz program wyznaczaj¹cy punkt przeciêcia dwóch prostych na p³aszczyŸnie (okreœlonych w dwuwymiarowej przestrzeni)
+3.8. Napisz program znajduj¹cy rozwi¹zanie uk³adu równañ z dwiema niewiadomymi.
+3.9. Napisz program wyœwietlaj¹cy n pierwszych elementów ci¹gu Fibonacciego
+3.10. Napisz program wyznaczaj¹cy najmniejsz¹ wspóln¹ wielokrotnoœæ NWD(a,b) dwóch liczb ca³kowitych a i b.
+3.11. Napisz program przeprowadzaj¹cy rozk³ad dowolnej liczby ca³kowitej na czynniki.
+3.13. Napisz program wykonuj¹cy dodawanie i mno¿enie dwóch liczb wymiernych (u³amków).
+Zadbaj o skrócenie wynikowego u³amka.
+3.14. Zaproponuj algorytm zamiany dowolnej liczby wymiernej (w postaci u³amka) do postaci u³amka egipskiego.
+Napisz przogram realizuj¹cy tak¹ zamianê.
+3.15. Napisz program wyznaczaj¹cy wartoœæ symbolu Newtona dla dwóch liczb ca³kowitych a i b.
+3.16. Napisz program, który sprawdza czy prosta okreœlona na p³aszczyŸnie przecina zdefiniowane w tek przestrzeni ko³o lub czy jest styczna do ko³a.
+U¿ytkownik wprowadza punkt [x,y] okreœlaj¹cy œrodek ko³a oraz jego promieñ r a tak¿e definiuje prost¹ y=ax+b za pomoc¹ wartoœci a i b.
+Rozszerz powy¿szy program tak aby wyœwietla³ punkty przeciêcia ko³a z prost¹ (je¿eli tylko istniej¹).
+4.1. Napisz funkcjê sprawdzaj¹c¹ czy podana w argumencie liczba ca³kowita n jest liczb¹ pierwsz¹.
+4.2. Napisz program, który dla podanej przez u¿ytkownika liczby ca³kowitej x, wykorzystuj¹c ow¹ funkcjê wyswietli wszystkie liczby pierwsze z przedzia³u od 2 do x.
+4.3. Napisz funkcjê wyznaczaj¹c¹ najmniejsz¹ wspóln¹ wielokrotnoœæ dwóch liczb ca³kowitych a i b.
+4.4. Napisz funkcjê, która dla denej wartoœci ca³kowitej n zwróci n-ty wyraz ci¹gu Fibonacciego.
+4.5. Napisz funkcjê, która dla danych 2 liczb ca³kowitych, wyznaczy wartoœæ dwumianu Newtona
+4.6. Napisz funkcjê zwracaj¹c¹ wartoœæ sumy pierwszych n wyrazów ci¹gu arytmetycznego
+4.7. Napisz funkcjê zwracaj¹c¹ wartoœæ sumy pierwszych n wyrazów ci¹gu geometrycznego
+4.8. Napisz funkcjê, która dla podanych d³ugoœci boków przyprostok¹tnych trójk¹ta prostok¹tnego zwróci d³ugoœæ boku przeciwprostok¹tnej.
+5.1. Napisz funkcjê maksind, która dla danej tablicy t zawieraj¹cej n liczb zmiennopozycyjnych zwróci pozycjê (indeks) maksymalnej wartoœci w zbiorze.
+5.2. Napisz funkcjê sortuj, która korzystaj¹c z funkcji maksind przeprowadzi procedurê sortowania elementów w tablicy liczb zmiennopozycyjnej zgodnie z algorytmem sortowania przez wybór (selection sort).
+5.3. Napisz program lub funkcjê sortuj¹c¹ elementy w tablicy za pomoc¹ algorytmu b¹belkowego
+5.4. Napisz funkcjê wyznaczaj¹c¹ pierwiastki równania kwadratowego. Dla danych wartoœci wspó³czynników a, b, c funkcja zwraca strukturê zawieraj¹c¹ informacjê o iloœci miejsc zerowych oraz wartoœci znalezionych pierwiastków (miejsc zerowych).
+5.5. Napisz funkcjê wyznaczaj¹c¹ wartoœæ wielomianu dowolnego stopnia w punkcie x. Wspó³czynniki wielomianu oraz jego stopieñ s¹ argumentami funkcji - wspó³czynniki umieszczone s¹ w tablicy. Do wyznaczenia wartoœci wielomianu wykorzystaj schemat Hornera.
+5.6. Napisz funkcjê, która dla danej tablicy zawieraj¹cej n liczb zmiennopozycyjnych zwróci strukturê zwracaj¹c¹ wartoœæ maksymaln¹ oraz minimaln¹ z tablicy. Postaraj siê zaimplementowaæ algorytm wyszukiwania w sposób optymalny, tak aby wykonaæ minimaln¹ liczbê operacji porównania.
+5.7. Napisz funkcjê, która dla danej tablicy zawieraj¹cej n liczb zmiennopozycyjnych zwróci: sumê elementów,sumê elementów wiêkszych od zera,wartoœæ œredni¹,odchylenie standardowe,wariancjê,rozstêp,medianê,liczbê elementów zawartych w podanym przedziale [a,b]
