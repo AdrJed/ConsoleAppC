@@ -67,16 +67,10 @@ void Wyk4Zad1()
 /* 4.2. Napisz funkcjê wyznaczaj¹c¹ najmniejsz¹ wspóln¹ wielokrotnoœæ dwóch liczb ca³kowitych a i b. */
 //to co 3.10
 /* 4.3. Napisz funkcjê, która dla danej wartoœci ca³kowitej n zwróci n-ty wyraz ci¹gu Fibonacciego. */
-void Wyk4Zad3()
+int f43(int n)
 {
-	int n = 0;
-
-	printf("Podaj element n ciagu fibonacciego do wyswietlenia: ");
-	scanf("%d", &n);
-
-	printf("fib(%d) = ", n);
-	if (n == 0){ printf("0"); }
-	else if (n == 1){ printf("1"); }
+	if (n == 0){ return 0; }
+	else if (n == 1){ return 1; }
 	else if (n > 1)
 	{
 		int a = 0,
@@ -86,11 +80,18 @@ void Wyk4Zad3()
 		while (i <= n)
 		{
 			b = a + b;
-			a = b - a;			
+			a = b - a;
 			i++;
 		}
-		printf("%d ", b);
+		return b;
 	}
+}
+void Wyk4Zad3()
+{
+	int n = 0;
+	printf("Podaj element n ciagu fibonacciego do wyswietlenia: ");
+	scanf("%d", &n);
+	printf("fib(%d) = ", f43(n));
 }
 /* 4.4. Napisz funkcjê, która dla danych 2 liczb ca³kowitych, wyznaczy wartoœæ dwumianu Newtona */
 //to co 3.15

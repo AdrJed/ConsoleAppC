@@ -100,7 +100,7 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		[16] = { 3, 16, Wyk3Zad16, "3.16 - polozenie prostej wzgledem okregu" },
 		//[] = { 3, 17, Wyk3Zad17, "3.17 - " },
 		[18] = { 4, 1, Wyk4Zad1, "4.1 - wyswietlanie liczb pierwszych od 2 do x, sprawdzanie czy liczba jest pierwsza" },
-		//[] = { 4, 2, Wyk4Zad2, "4.2 - " },
+		[19] = { 4, 2, Wyk3Zad10, "4.2 - to co 3.10 - NWW dla a,b" },
 		[20] = { 4, 3, Wyk4Zad3, "4.3 - wyswietlanie elementu n ciagu Fibonacciego" },
 		//[21] = { 4, 4, Wyk4Zad4, "4.4 - oblicznanie dwumianu Newtona" },
 		[22] = { 4, 5, Wyk4Zad5, "4.5 - suma pierwszych n wyrazow ciagu arytmetycznego" },
