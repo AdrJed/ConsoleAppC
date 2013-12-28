@@ -109,7 +109,7 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		[25] = { 5, 1, Wyk5Zad1, "5.1 - zwracanie indeksu maksymalnej wartoœci w zbiorze" },
 		//[] = { 5, 2, Wyk5Zad2, "5.2 - " },
 		//[] = { 5, 3, Wyk5Zad3, "5.3 - " },
-		//[] = { 5, 4, Wyk5Zad4, "5.4 - " },
+		[28] = { 5, 4, Wyk5Zad4, "5.4 - Pierwiastki rownania kwadratowego" },
 		[29] = { 5, 5, Wyk5Zad5, "5.5 - Obliczanie wielomianu n-tego stopnia dla danego x" },
 		//[] = { 5, 6, Wyk5Zad6, "5.6 - " },
 		[31] = { 5, 7, Wyk5Zad7, "5.7 - wyznaczanie dla zbioru liczb zmiennopozycyjnych:\n-sumy elementow\n-sumy elementow >0\n-sredniej\n-odchylenia standardowego\n-wariancji\n-rozstepu\nmediany\n-liczby elementow w przedziale <a,b>" },
