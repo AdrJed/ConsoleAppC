@@ -71,7 +71,7 @@ void Wyk3Zad3()
 
 #undef MAX
 }
-/*TODO: 3.4. Napisz program wyœwietlaj¹cy na ekranie tabliczkê mno¿enia o wymiarach N x N, gdzie wartoœæ ca³kowit¹ N podaje u¿ytkownik. */
+/* 3.4. Napisz program wyœwietlaj¹cy na ekranie tabliczkê mno¿enia o wymiarach N x N, gdzie wartoœæ ca³kowit¹ N podaje u¿ytkownik. */
 void Wyk3Zad4()
 {
 	int N = 0;
@@ -345,19 +345,16 @@ void Wyk3Zad15()
 
 	printf("%g", wynik);
 }
-/*TODO: 3.16. Napisz program, który sprawdza czy prosta okreœlona na p³aszczyŸnie przecina zdefiniowane w tek przestrzeni ko³o lub czy jest styczna do ko³a.
+/* 3.16. Napisz program, który sprawdza czy prosta okreœlona na p³aszczyŸnie przecina zdefiniowane w tek przestrzeni ko³o lub czy jest styczna do ko³a.
 U¿ytkownik wprowadza punkt [x,y] okreœlaj¹cy œrodek ko³a oraz jego promieñ r a tak¿e definiuje prost¹ y=ax+b za pomoc¹ wartoœci a i b. */
 void Wyk3Zad16()
 {
-	float Ak, Bk, Rk, Xk, Yk,
-		  Ap, Bp, Cp, Xp, Yp;
-	float d;
+	float Ak, Bk, Rk,
+		Ap, Bp, Cp,
+		d;
 
 	printf("Podaj wspolrzedne x,y i promien r okregu.\n");
 	printf("x,y r: "); scanf("%d,%d %d", &Ak, &Bk, &Rk);
-	//printf("Podaj wspolrzedne A B C prostej Ax + By + C = 0.\n");
-	//printf("A B C: "); scanf("%d %d %d", &Ap, &Bp, &Cp);
-	//lub
 	printf("Podaj wspolrzedne A C prostej y = Ax + C.\n");
 	printf("A C: "); scanf("%d %d", &Ap, &Cp); Bp = -1;
 
@@ -368,25 +365,11 @@ void Wyk3Zad16()
 	{
 		printf("promien okregu > odleglosc od prostej\n");
 		printf("Prosta przecina sie w dwoch punktach z okregiem.\n");
-		
-
-		//printf("1. [%g, %g]\n2. [%g, %g]", x1, y1, x2, y2);
 	}
 	else if (Rk == d)
 	{
 		printf("promien okregu == odleglosc od prostej\n");
 		printf("Prosta jest styczna do okregu.\n");
-		float x1 = Ak - Rk;
-		float y1 = Ap*x1 + Cp;
-
-		do
-		{
-
-			if (x1 <= Ak - Rk || x1 >= Ak + Rk);
-
-		} while (Bp*y1 == Ap*x1 + Cp);
-
-		//printf("1. [%g, %g]\n", x1, y1);
 	}
 	else if (Rk < d)
 	{
@@ -395,4 +378,8 @@ void Wyk3Zad16()
 	}
 }
 
-/* Rozszerz powy¿szy program tak aby wyœwietla³ punkty przeciêcia ko³a z prost¹ (je¿eli tylko istniej¹). */
+/*TODO: 3.17 Rozszerz powy¿szy program tak aby wyœwietla³ punkty przeciêcia ko³a z prost¹ (je¿eli tylko istniej¹). */
+void Wyk3Zad17()
+{
+
+}
