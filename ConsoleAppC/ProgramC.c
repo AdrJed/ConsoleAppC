@@ -56,7 +56,7 @@ static int getLine(char *prmpt, char *buff, size_t sz) {
 }
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
-   Sprawdziæ czy zgadza siê do odkomentowaniu nowego programu */
+   Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
 #define pCount 35 // Liczba programów
 /* Struktura programów do uruchomienia  */
 struct programContentStruct
@@ -77,6 +77,7 @@ struct programContentStruct findProgramContent(struct programContentStruct pS[],
 }
 /* Funkcja dodaj¹ca do tablicy struktur aktualnie gotowe programy */
 void addProgramContent(struct programContentStruct pS[], int p)
+
 {
 	/* Aktualnie niegotowe programy s¹ zakomentowane */
 	struct programContentStruct pCS[] = {

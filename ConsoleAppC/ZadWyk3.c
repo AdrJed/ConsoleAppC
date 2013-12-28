@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#include "minimath.h"
+//#include "minimath.h"
 #include <math.h>
 
 /* Zadania WYK£AD 3 */
@@ -196,33 +196,23 @@ void Wyk3Zad9()
 		}
 	}
 }
-/*TODO: 3.10. Napisz program wyznaczaj¹cy najmniejsz¹ wspóln¹ wielokrotnoœæ NWW(a,b) dwóch liczb ca³kowitych a i b. */
+/* 3.10. Napisz program wyznaczaj¹cy najmniejsz¹ wspóln¹ wielokrotnoœæ NWW(a,b) dwóch liczb ca³kowitych a i b. */
 void Wyk3Zad10()
 {
-	int a, b, ac, bc,
-		div = 2,
-		NWW = 1,
-		NWD = 1;
-	// wykrzacza np dla 3 i 4
+	int a, b, iloczyn,NWW, tmp;
 	printf("Podaj a , b dla NWW(a,b): ");
 	scanf("%d %d", &a, &b);
-	ac = a; bc = b;
 
-	while (a != 1 && b != 1)
+	iloczyn = a * b;
+	while (a != 0)
 	{
-		if (a%div == 0 && b%div == 0)
-		{
-			NWD *= div;
-			a /= div;
-			b /= div;
-		}
-		else if (a%div != 0 || b%div != 0)
-		{
-			div++;
-		}
+		b = b%a;
+		tmp = b;
+		b = a;
+		a = tmp;
 	}
 
-	NWW = ac*bc / NWD;
+	NWW = iloczyn/b;
 
 	printf("NWW: %d ", NWW);
 }
@@ -359,21 +349,50 @@ void Wyk3Zad15()
 U¿ytkownik wprowadza punkt [x,y] okreœlaj¹cy œrodek ko³a oraz jego promieñ r a tak¿e definiuje prost¹ y=ax+b za pomoc¹ wartoœci a i b. */
 void Wyk3Zad16()
 {
-	int Kx, Ky, Kr,
-		Px, Py;
+	float Ak, Bk, Rk, Xk, Yk,
+		  Ap, Bp, Cp, Xp, Yp;
 	float d;
 
-	printf("Podaj wspolrzedne x,y i promien r kola.\n");
-	printf("x,y r: ");
-	scanf("%d,%d %d", &Kx, &Ky, &Kr);
-	printf("Podaj wspolrzedne a i b prostej ax + b.\n");
-	printf("a b: ");
-	scanf("%d %d", &Px, &Py);
-	Py = -Py;
+	printf("Podaj wspolrzedne x,y i promien r okregu.\n");
+	printf("x,y r: "); scanf("%d,%d %d", &Ak, &Bk, &Rk);
+	//printf("Podaj wspolrzedne A B C prostej Ax + By + C = 0.\n");
+	//printf("A B C: "); scanf("%d %d %d", &Ap, &Bp, &Cp);
+	//lub
+	printf("Podaj wspolrzedne A C prostej y = Ax + C.\n");
+	printf("A C: "); scanf("%d %d", &Ap, &Cp); Bp = -1;
 
-	d = /*modul*/abs(Kx*Px + Py*Ky + 0) / /*pierwiastek*/sqrt(Px*Px + Py*Py, 2);
+	d = abs(Ap*Ak + Bp*Bk + Cp) / sqrt(Ap*Ap + Bp*Bp);
+	printf("promien okregu = %g , odleglosc od prostej = %g\n",Rk , d);
 
-	printf("d = %f", d);
+	if (Rk > d)
+	{
+		printf("promien okregu > odleglosc od prostej\n");
+		printf("Prosta przecina sie w dwoch punktach z okregiem.\n");
+		
+
+		//printf("1. [%g, %g]\n2. [%g, %g]", x1, y1, x2, y2);
+	}
+	else if (Rk == d)
+	{
+		printf("promien okregu == odleglosc od prostej\n");
+		printf("Prosta jest styczna do okregu.\n");
+		float x1 = Ak - Rk;
+		float y1 = Ap*x1 + Cp;
+
+		do
+		{
+
+			if (x1 <= Ak - Rk || x1 >= Ak + Rk);
+
+		} while (Bp*y1 == Ap*x1 + Cp);
+
+		//printf("1. [%g, %g]\n", x1, y1);
+	}
+	else if (Rk < d)
+	{
+		printf("promien okregu < odleglosc od prostej\n");
+		printf("Prosta nie przecina sie z okregiem.\n");
+	}
 }
 
 /* Rozszerz powy¿szy program tak aby wyœwietla³ punkty przeciêcia ko³a z prost¹ (je¿eli tylko istniej¹). */

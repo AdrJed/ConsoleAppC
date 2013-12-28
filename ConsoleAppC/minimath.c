@@ -15,7 +15,7 @@ double pierwiastek(double liczba, int stopien)
 	//poczatkowe przyblizenie
 	double result = liczba;
 	//x^n-1
-	double tmp = potega((int)result, (stopien - 1));
+	double tmp = potega(result, (stopien - 1));
 	//dokladnosc obliczen
 	double e = 0.00000001;
 
@@ -30,14 +30,44 @@ double pierwiastek(double liczba, int stopien)
 
 	return result;
 }
-int potega(int liczba, int wykladnik)
+float potega(float liczba, int wykladnik)
 {
+	float wynik = liczba;
 	if (wykladnik == 0) return 1;
 	if (wykladnik == 1) return liczba;
-	if (liczba % 2 != 0) return potega(liczba, wykladnik - 1);
+	for (int i = 0; i < wykladnik; i++)
+	{
+		wynik *= liczba;
+	}
+	return wynik;
+}
+
+struct wynikRK
+{
+	float W1,W2;
+};
+struct wynikRK rownanieKwadratowe(const float *Ax2, const float *Bx, const float *C)
+{
+	struct wynikRK wRK;
+	float delta = ((*Bx) * (*Bx)) - (4 * (*Ax2) * (*C));
+
+	if (delta == 0)
+	{
+		wRK.W1 = (-(*Bx)) / (2 * (*Ax2));
+		wRK.W2 = 0;
+		return wRK;
+	}
+	else if (delta > 0)
+	{
+		wRK.W1 = ((-(*Bx)) - pierwiastek(delta, 2)) / (2 * (*Ax2));
+		wRK.W2 = ((-(*Bx)) + pierwiastek(delta, 2)) / (2 * (*Ax2));
+		return wRK;
+	}
 	else
 	{
-		liczba = potega(liczba, wykladnik / 2);
-		return liczba*liczba;
+		wRK.W1 = 0; 
+		wRK.W2 = 0;
+		return wRK;
 	}
+
 }
