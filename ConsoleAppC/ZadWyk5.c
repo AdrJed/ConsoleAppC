@@ -44,9 +44,91 @@ void Wyk5Zad1()
 #undef T_SIZE
 }
 /* 5.2. Napisz funkcjê sortuj, która korzystaj¹c z funkcji maksind przeprowadzi procedurê sortowania elementów w tablicy liczb zmiennopozycyjnej zgodnie z algorytmem sortowania przez wybór (selection sort). */
+void selectionSort(float fTab[], const int tSize)
+{
+	int Size = tSize;
+	int maxInd;
+	float tmp;
 
+	for (int i = tSize-1; i != 0; i--)
+	{
+		maxInd = maxIndex(fTab, Size);
+		if (maxInd != i)
+		{
+			tmp = fTab[maxInd];
+			fTab[maxInd] = fTab[i];
+			fTab[i] = tmp;
+		}
+		Size--;
+	}
+}
+void Wyk5Zad2()
+{
+#define T_SIZE 10
+	float fTab[T_SIZE] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+
+	printf("Podaj wartosci do posortowania. \n");
+	for (int i = 0; i < T_SIZE; i++)
+	{
+		printf("fTab[%d]: ", i);
+		scanf("%f", &fTab[i]);		
+	}
+
+	selectionSort(fTab, T_SIZE);
+
+	printf("Elementy posortowane:\n");
+	for (int i = 0; i < T_SIZE; i++)
+	{
+		printf("| %g ", fTab[i]);
+	}
+
+#undef T_SIZE
+}
 /* 5.3. Napisz program lub funkcjê sortuj¹c¹ elementy w tablicy za pomoc¹ algorytmu b¹belkowego */
+void bubbleSort(float fTab[], const int tSize)
+{
+	int swapCount = 0;
+	float tmp = 0;
 
+	while(true)
+	{
+		for (int i = 0; i < tSize - 1; i++)
+		{
+			if (fTab[i] > fTab[i + 1])
+			{
+				tmp = fTab[i + 1];
+				fTab[i + 1] = fTab[i];
+				fTab[i] = tmp;
+				swapCount += 1;
+			}
+		}
+		if (swapCount != 0) swapCount = 0;
+		else break;
+	}
+}
+void Wyk5Zad3()
+{
+#define T_SIZE 10
+
+	float fTab[T_SIZE] = { 10,9,8,7,6,5,4,3,2,1 };
+
+	printf("Podaj wartosci do posortowania.\n");
+	for (int i = 0; i < T_SIZE; i++)
+	{
+		printf("fTab[%d]: ", i);
+		scanf("%f", &fTab[i]);
+	}
+
+	bubbleSort(fTab, T_SIZE);
+
+	printf("Elementy posortowane:\n");
+	for (int i = 0; i < T_SIZE; i++)
+	{
+		printf("| %g ", fTab[i]);
+	}
+
+#undef T_SIZE
+}
 /* 5.4. Napisz funkcjê wyznaczaj¹c¹ pierwiastki równania kwadratowego. Dla danych wartoœci wspó³czynników a, b, c funkcja zwraca strukturê zawieraj¹c¹ informacjê o iloœci miejsc zerowych oraz wartoœci znalezionych pierwiastków (miejsc zerowych). */
 struct fKwadratowa {
 	float a, b, c, x1, x2, x0, delta;
