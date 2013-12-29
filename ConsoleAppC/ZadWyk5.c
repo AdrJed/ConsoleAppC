@@ -510,3 +510,33 @@ void Wyk5Zad10()
 }
 /* 5.11 Napisz funkcje wyznaczaj¹ce odleg³oœæ euklidesow¹ oraz iloczyn skalarny dwóch punktów w przestrzeni n wymiarowej(zak³adamy, ¿e n<1000).Reprezentuj punkt(wektor) w przestrzeni n wymiarowej za pomoc¹ odpowiedniej struktury.
 	Napisz program, który wczyta wspó³rzêdne 2 wektorów o takim samym wymiarze i wyœwietli odleg³oœæ euklidesow¹ oraz iloczyn skalarny dla tych wektorów. */
+struct wektor
+{
+	float wsp[1000];
+	const int wymiar;
+};
+float odlegloscEuklidesowa(struct wektor *w1, struct wektor *w2)
+{
+	float odleglosc = 0;
+
+	return odleglosc;
+}
+float iloczynSkalarny(struct wektor *w1, struct wektor *w2)
+{
+	float iloczyn = 0;
+
+	return iloczyn;
+}
+void Wyk5Zad11()
+{
+	int wymiar;
+
+	do
+	{
+		printf("Podaj ilosc wymiarow wektorow: ");
+		scanf("%d", &wymiar);
+	} while (wymiar < 1000);
+
+	struct wektor w1 = { { 0 }, wymiar };
+	struct wektor w2 = { { 0 }, wymiar };
+}

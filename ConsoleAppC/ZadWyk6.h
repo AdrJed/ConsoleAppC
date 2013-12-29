@@ -2,5 +2,5 @@
 
 //void Wyk6Zad1();
 //void Wyk6Zad2();
-//void Wyk6Zad3();
+void Wyk6Zad3();
 

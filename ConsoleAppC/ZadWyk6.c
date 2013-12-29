@@ -23,8 +23,47 @@ void Wyk6Zad2()
 /* 6.3 Zaimplementuj funkcjê odwracaj¹c¹ kolejnoœæ pierwszych n elementów w tablicy liczb zmiennopozycyjnych(typu float).
 Wartoœci¹ zwracan¹ funkcji jest adres pierwszego elementu tablicy, tak aby mo¿liwe by³o wywo³anie funkcji odwracanie(odwracanie(tablica, n), n).
 Takie wywo³anie powinno w efekcie daæ tablice z elementami u³o¿ynymi w pierwotnej kolejnoœci. */
+float* odwracanie(float fTab[], int n)
+{
+	n--;
+	float tmp;
 
+	for (int i = 0; i <= n/2; i++)
+	{
+		tmp = fTab[i];
+		fTab[i] = fTab[n - i];
+		fTab[n - i] = tmp;
+	}
+
+	return fTab;
+}
 void Wyk6Zad3()
 {
+#define T_SIZE 10
 
+	float fTab[T_SIZE] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+	int ileOdwrocic;
+
+	printf("Wprowadz liczby do tablicy:\n");
+	for (int i = 0; i < T_SIZE; i++)
+	{
+		printf("fTab[%d]: ",i);
+		scanf("%f", &fTab[i]);
+	}
+
+	do
+	{
+		printf("ile pierwszych elementow odwrocic: ");
+		scanf("%d", &ileOdwrocic);
+	} while (ileOdwrocic > T_SIZE);
+
+	//odwracanie(odwracanie(fTab, ileOdwrocic), ileOdwrocic);
+	odwracanie(fTab, ileOdwrocic);
+
+	for (int i = 0; i < T_SIZE; i++)
+	{
+		printf("| %g ", fTab[i]);
+	}
+
+#undef T_SIZE
 }

@@ -57,7 +57,7 @@ static int getLine(char *prmpt, char *buff, size_t sz) {
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
    Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
-#define pCount 35 // Liczba programów
+#define pCount 39 // Liczba programów
 /* Struktura programów do uruchomienia  */
 struct programContentStruct
 {
@@ -119,7 +119,7 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		//[] = { 5, 11, Wyk5Zad11, "5.11 - " },
 		//[] = { 6, 1, Wyk6Zad1, "6.1 - " },
 		//[] = { 6, 2, Wyk6Zad2, "6.2 - " },
-		//[38] = { 6, 3, Wyk6Zad3, "6.3 - " },
+		[38] = { 6, 3, Wyk6Zad3, "6.3 - odwracanie elementow w tablicy" },
 	};
 
 	for (int i = 0; i < p; i++)
