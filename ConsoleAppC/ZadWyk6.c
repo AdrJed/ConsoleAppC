@@ -11,6 +11,11 @@ void Wyk6Zad1()
 }
 /* 6.2 Zaimplementuj funkcjê znajduj¹c¹ miejsca zerowe paraboli.Wartoœci¹ zwracan¹ funkcji jest liczba ca³kowita okreœlaj¹ca iloœæ miejsc zerowych(0, 1 lub 2).Wartoœci szukane x1 i x2 s¹ przekazywane przez wskaŸnik.
 Zaimplementuj program wyznaczaj¹cy miejsca zerowe dla dowolnego wielomianu stopnia 2. */
+
+char f62(const float *a,const float *b,const float *c, float *x1, float *x2)
+{
+
+}
 void Wyk6Zad2()
 {
 

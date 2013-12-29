@@ -91,7 +91,7 @@ void Wyk4Zad3()
 	int n = 0;
 	printf("Podaj element n ciagu fibonacciego do wyswietlenia: ");
 	scanf("%d", &n);
-	printf("fib(%d) = ", f43(n));
+	printf("fib(%d) = %d ",n, f43(n));
 }
 /* 4.4. Napisz funkcjê, która dla danych 2 liczb ca³kowitych, wyznaczy wartoœæ dwumianu Newtona */
 //to co 3.15
