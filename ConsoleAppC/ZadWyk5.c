@@ -216,7 +216,52 @@ void Wyk5Zad5()
 #undef wTabMax
 }
 /* 5.6. Napisz funkcjê, która dla danej tablicy zawieraj¹cej n liczb zmiennopozycyjnych zwróci strukturê zwracaj¹c¹ wartoœæ maksymaln¹ oraz minimaln¹ z tablicy. Postaraj siê zaimplementowaæ algorytm wyszukiwania w sposób optymalny, tak aby wykonaæ minimaln¹ liczbê operacji porównania. */
+struct minMaxTab
+{
+	float min, max;
+};
+struct minMaxTab szukajMinMaxWTablicy(float fTab[], const int tSize)
+{
+	struct minMaxTab minMax;
 
+	minMax.min = fTab[0];
+	minMax.max = fTab[0];
+
+	for (int i = 0; i < tSize; i++)
+	{
+		if (fTab[i] > minMax.max)
+		{
+			minMax.max = fTab[i];
+		}
+		else if (fTab[i] < minMax.min)
+		{
+			minMax.min = fTab[i];
+		}
+	}
+
+	return minMax;
+}
+void Wyk5Zad6()
+{
+#define T_SIZE 10
+
+	float fTab[T_SIZE] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+	struct minMaxTab minMax;
+
+	printf("Podaj liczby do tablicy:\n");
+	for (int i = 0; i < T_SIZE; i++)
+	{
+		printf("fTab[%d]: ", i);
+		scanf("%f", &fTab[i]);
+	}
+
+	minMax = szukajMinMaxWTablicy(fTab, T_SIZE);
+
+	printf("Minimalna wartosc w tablicy: %g\n", minMax.min);
+	printf("Maksymalna wartosc w tablicy: %g\n", minMax.max);
+
+#undef T_SIZE
+}
 /* 5.7. Napisz funkcjê, która dla danej tablicy zawieraj¹cej n liczb zmiennopozycyjnych zwróci: sumê elementów,sumê elementów wiêkszych od zera,wartoœæ œredni¹,odchylenie standardowe,wariancjê,rozstêp,medianê,liczbê elementów zawartych w podanym przedziale [a,b] */
 float sumaElementow(float fTab[], int tSize)
 {
