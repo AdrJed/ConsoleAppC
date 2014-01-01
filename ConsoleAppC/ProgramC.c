@@ -114,7 +114,7 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		[30] = { 5, 6, Wyk5Zad6, "5.6 - Zwracanie struktury z minimalna i maksymalna wartoscia w tablicy" },
 		[31] = { 5, 7, Wyk5Zad7, "5.7 - wyznaczanie dla zbioru liczb zmiennopozycyjnych:\n-sumy elementow\n-sumy elementow >0\n-sredniej\n-odchylenia standardowego\n-wariancji\n-rozstepu\nmediany\n-liczby elementow w przedziale <a,b>" },
 		[32] = { 5, 8, Wyk5Zad8, "5.8 - dodawanie, odejmowanie, mnozenie liczb urojonych" },
-		//[] = { 5, 9, Wyk5Zad9, "5.9 - " },
+		[33] = { 5, 9, Wyk5Zad9, "5.9 - dodawanie, odejmowanie, mnozenie, dzielenie ulamkow" },
 		[34] = { 5, 10, Wyk5Zad10, "5.10 - odleglosc miedzy punktami w przestrzeni 3D " },
 		//[] = { 5, 11, Wyk5Zad11, "5.11 - " },
 		//[] = { 6, 1, Wyk6Zad1, "6.1 - " },

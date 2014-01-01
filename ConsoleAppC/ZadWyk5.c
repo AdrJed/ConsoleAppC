@@ -485,7 +485,68 @@ void Wyk5Zad8()
 }
 /* 5.9 Zaimplementuj zestaw funkcji realizuj¹cych podstawowe operacje na u³amkach(dodawanie, odejmowanie, mno¿enie, dzielenie).U³amki reprezentuj za pomoc¹ odpowiednich struktur.
 	Napisz program wczytuj¹cy dwa u³amki i wyœwietlaj¹cy wyniki operacji dodawania, odejmowania, mno¿enia i dzielenia u³amków.Zadbaj o to, aby wyœwietlane u³amki by³y zawsze sprowadzone do najprostszej postaci. */
+struct fraction
+{
+	int l; //licznik
+	int m; //mianownik
+};
+void reduceFraction(struct fraction *f)
+{
+};
+struct fraction addFraction(struct fraction f1, struct fraction f2)
+{
+	struct fraction result;
+	result.l = f1.l*f2.m + f2.l*f1.m;
+	result.m = f1.m * f2.m;
 
+	reduceFraction(&result);
+	return result;
+}
+struct fraction subtractFraction(struct fraction f1, struct fraction f2)
+{
+	struct fraction result;
+	result.l = f1.l*f2.m - f2.l*f1.m;
+	result.m = f1.m * f2.m;
+
+	reduceFraction(&result);
+	return result;
+}
+struct fraction multiplyFraction(struct fraction f1, struct fraction f2)
+{
+	struct fraction result;
+	result.l = f1.l * f2.l;
+	result.m = f1.m * f2.m;
+
+	reduceFraction(&result);
+	return result;
+}
+struct fraction divideFraction(struct fraction f1, struct fraction f2)
+{
+	struct fraction result;
+	result.l = f1.l * f2.m;
+	result.m = f2.m * f1.l;
+
+	reduceFraction(&result);
+	return result;
+}
+void Wyk5Zad9()
+{
+	struct fraction f1, f2, addf, subf, mulf, divf;
+
+	printf("Podaj ulamki na ktorych wykonac dzialania, np: 3/4 -5/6\n");
+	printf("a/b b/c: "); scanf("%d/%d %d/%d", &f1.l, &f1.m, &f2.l, &f2.m);
+
+	addf = addFraction(f1, f2);
+	subf = subtractFraction(f1, f2);
+	mulf = multiplyFraction(f1, f2);
+	divf = divideFraction(f1, f2);
+
+	printf("%d/%d + %d/%d = %d/%d\n", f1.l, f1.m, f2.l, f2.m, addf.l, addf.m);
+	printf("%d/%d - %d/%d = %d/%d\n", f1.l, f1.m, f2.l, f2.m, subf.l, subf.m);
+	printf("%d/%d * %d/%d = %d/%d\n", f1.l, f1.m, f2.l, f2.m, mulf.l, mulf.m);
+	printf("%d/%d / %d/%d = %d/%d\n", f1.l, f1.m, f2.l, f2.m, divf.l, divf.m);
+
+}
 /* 5.10 Napisz funkcjê wyznaczaj¹c¹ odleg³oœæ euklidesow¹ pomiêdzy dowolnymi punktami w przestrzeni trójwymiarowej.Punkty okreœlone wspó³rzêdnymi x, y i z reprezentuj za pomoc¹ odpowiedniej struktury.
 	Napisz program który wczyta 2 punkty i wyœwietli ich odleg³oœæ. */
 struct point3d{

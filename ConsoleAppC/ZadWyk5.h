@@ -8,6 +8,6 @@ void Wyk5Zad5();
 void Wyk5Zad6();
 void Wyk5Zad7();
 void Wyk5Zad8();
-//void Wyk5Zad9();
+void Wyk5Zad9();
 void Wyk5Zad10();
 //void Wyk5Zad11();
