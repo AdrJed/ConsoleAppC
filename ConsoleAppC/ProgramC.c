@@ -23,6 +23,7 @@ void programInfo()
 	printf("loop [kod] - uruchamia program w petli dopoki nie zostanie wpisane exit\n");
 	printf("help [kod] - informacje o programie z podanym kodem\n");
 	printf("list - wypisuje dostepne kody programow do uruchomienia\n");
+	printf("list [nr wykladu] - wyswietla liste dostepnych programow dla wykladu\n");
 	printf("exit - wyjscie\n");
 }
 /* Bezpieczna funkcja pobierania argumentow z stdin */
@@ -59,7 +60,7 @@ static int getLine(char *prmpt, char *buff, size_t sz) {
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
    Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
-#define pCount 39 // Liczba programów
+#define pCount 39 // Liczba programów !!!
 /* Struktura programów do uruchomienia  */
 struct programContentStruct
 {
@@ -137,11 +138,21 @@ void printProgramHelp(struct programContentStruct pS[], int wNr, int pNr)
 {
 	printf(findProgramContent(pS, wNr, pNr).pInfo);
 }
-void printProgramList(struct programContentStruct pS[])
+void printProgramList(struct programContentStruct pS[], int wNr)
 {
-	for (int i = 0; i < pCount; i++)
+	if (wNr == 0)
 	{
-		if (pS[i].pInfo != NULL) printf("%s \n", pS[i].pInfo);
+		for (int i = 0; i < pCount; i++)
+		{
+			if (pS[i].pInfo != NULL) printf("%s \n", pS[i].pInfo);
+		}
+	}
+	else
+	{
+		for (int i = 0; i < pCount; i++)
+		{
+			if (pS[i].pInfo != NULL && pS[i].wykNr == wNr) printf("%s \n", pS[i].pInfo);
+		}
 	}
 }
 
@@ -170,7 +181,14 @@ int main()
 
 		if (!strcmp("list", arg))
 		{
-			printProgramList(&pS);
+			if (wN <= 8 && wN >= 3)
+			{
+				printProgramList(&pS, wN);
+			}
+			else
+			{
+				printProgramList(&pS, 0);
+			}
 			continue;
 		}
 		else if (!strcmp("loop", arg))
