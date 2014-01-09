@@ -88,6 +88,8 @@
     <ClCompile Include="ZadWyk4.c" />
     <ClCompile Include="ZadWyk5.c" />
     <ClCompile Include="ZadWyk6.c" />
+    <ClCompile Include="ZadWyk7.c" />
+    <ClCompile Include="ZadWyk8.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="macierze.h" />
@@ -98,6 +100,8 @@
     <ClInclude Include="ZadWyk4.h" />
     <ClInclude Include="ZadWyk5.h" />
     <ClInclude Include="ZadWyk6.h" />
+    <ClInclude Include="ZadWyk7.h" />
+    <ClInclude Include="ZadWyk8.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleAppC.rc" />

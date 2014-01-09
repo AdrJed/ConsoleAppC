@@ -6,6 +6,8 @@
 #include "ZadWyk4.h"
 #include "ZadWyk5.h"
 #include "ZadWyk6.h"
+#include "ZadWyk7.h"
+#include "ZadWyk8.h"
 #include "macierze.h"
 
 /* Funkcja brakProgramu jesli nie znaleziono programu */ 
@@ -201,7 +203,7 @@ int main()
 			break;					
 		}
 		
-		// Jeœli nie spe³niono powy¿szych warunków, pobierz kod programu i wykonaj go
+		// Jeœli nie spe³niono powy¿szych warunków, pobierz adres programu i wykonaj go
 		sscanf(args, "%d.%d", &wN, &pN);
 		selectedPS = findProgramContent(&pS, wN, pN);
 		if (selectedPS.progNr != 0)
