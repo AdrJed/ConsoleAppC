@@ -60,7 +60,8 @@ static int getLine(char *prmpt, char *buff, size_t sz) {
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
    Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
-#define pCount 39 // Liczba programów !!!
+#define WYK_COUNT 8 // Liczba wyk³adów !!!
+#define PROG_COUNT 39 // Liczba programów !!!
 /* Struktura programów do uruchomienia  */
 struct programContentStruct
 {
@@ -71,7 +72,7 @@ struct programContentStruct
 };
 struct programContentStruct findProgramContent(struct programContentStruct pS[], int wNr, int pNr)
 {
-	for (int i = 0; i < pCount; i++)
+	for (int i = 0; i < PROG_COUNT; i++)
 	{
 		if (pS[i].wykNr == wNr && pS[i].progNr == pNr) return pS[i];
 	}
@@ -140,57 +141,70 @@ void printProgramHelp(struct programContentStruct pS[], int wNr, int pNr)
 }
 void printProgramList(struct programContentStruct pS[], int wNr)
 {
+	int listedCount = 0; // Licznik iloœci wyœwietlonych programów
+
+	// Jesli nie wprowadzono numeru wykladu, beda wyswietlone wszystkie programy
 	if (wNr == 0)
 	{
-		for (int i = 0; i < pCount; i++)
+		for (int i = 0; i < PROG_COUNT; i++)
 		{
-			if (pS[i].pInfo != NULL) printf("%s \n", pS[i].pInfo);
+			if (pS[i].pInfo != NULL)
+			{
+				printf("%s \n", pS[i].pInfo);
+				listedCount++;
+			}
 		}
+		printf("Lacznie programow: %d\n", listedCount);
 	}
+	// Jesli wprowadzono numer wykladu, bedzie on rozny od zera
 	else
 	{
-		for (int i = 0; i < pCount; i++)
+		for (int i = 0; i < PROG_COUNT; i++)
 		{
-			if (pS[i].pInfo != NULL && pS[i].wykNr == wNr) printf("%s \n", pS[i].pInfo);
+			if (pS[i].pInfo != NULL && pS[i].wykNr == wNr)
+			{
+				printf("%s \n", pS[i].pInfo);
+				listedCount++;
+			}
 		}
+		if (listedCount > 0) printf("Lacznie programow: %d\n", listedCount);
+		else printf("Brak programow z danego wykladu\n");
 	}
 }
 
-/* -- FUNKCJA G£ÓWNA -- */
+/* -- PUNKT WEJŒCIA -- */
 int main()
 {	
 	int wN = 0,						// numer wyk³adu
 		pN = 0;						// numer programu
 
 	struct programContentStruct selectedPS;// struktura aktualnego programu;
-	struct programContentStruct pS[pCount];// lista struktur wszystkich dostepnych programow;
-	addProgramContent(pS, pCount);// dodawanie dostêpnych programów do listy
+	struct programContentStruct pS[PROG_COUNT];// lista struktur wszystkich dostepnych programow;
+	addProgramContent(pS, PROG_COUNT);// dodawanie dostêpnych programów do listy
 
 	programInfo();
 
-	// pêtla pobierania argumentów od u¿ytkownika
+	// pêtla pobierania argumentów od u¿ytkownika i wykonywania odpowiedniej akcji
 	while (true)
 	{
 		char args[32] = { '0' };	// wszystkie wprowadzone argumenty
 		char arg[32] = { '0' };		// wybrany argument
-		wN = 0; pN = 0;
+		wN = 0; pN = 0;				// numer wykladu i programu
 		
 		fflush(stdin);
 		getLine("\n> ", args, sizeof(args));
 		sscanf(args, "%s %d.%d", arg, &wN, &pN);
 
+		// listowanie dostêpnych programów
 		if (!strcmp("list", arg))
 		{
-			if (wN <= 8 && wN >= 3)
-			{
+			if (wN <= WYK_COUNT) 
 				printProgramList(&pS, wN);
-			}
-			else
-			{
+			else 
 				printProgramList(&pS, 0);
-			}
 			continue;
 		}
+		// zapêtlanie wykonywania wybranego programu
 		else if (!strcmp("loop", arg))
 		{
 			char exitCheck[5] = "null\0";			
@@ -204,24 +218,26 @@ int main()
 			} while ( strcmp("exit\0", exitCheck) );
 			continue;
 		}
+		// informacje programu o konkretnym numerze
 		else if (!strcmp("help", arg))
 		{
 			if (wN == 0 && pN == 0) programInfo();
 			else printProgramHelp(&pS, wN, pN);
 			continue;
 		}
+		// mno¿enie macierzy
 		else if (!strcmp("macierze", arg))
 		{
 			macierze();
 			continue;
 		}
+		// przerywa program, jeœli wpisano "exit"
 		else if (!strcmp("exit", arg))
 		{
-			//przerywa program, jeœli wpisano "exit"
 			break;					
 		}
 		
-		// Jeœli nie spe³niono powy¿szych warunków, pobierz adres programu i wykonaj go
+		// Jeœli nie spe³niono powy¿szych warunków, pobierz adres wybranego programu i wykonaj go
 		sscanf(args, "%d.%d", &wN, &pN);
 		selectedPS = findProgramContent(&pS, wN, pN);
 		if (selectedPS.progNr != 0)
