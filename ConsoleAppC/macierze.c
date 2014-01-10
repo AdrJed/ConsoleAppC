@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void wczytajMacierz(float *(*tab), int Size_x, int Size_y)
+void wczytajMacierz(float **tab, int Size_x, int Size_y)
 {
 	int x, y;
 	float data;
@@ -19,11 +19,11 @@ void wczytajMacierz(float *(*tab), int Size_x, int Size_y)
 			scanf("%f", &data);
 			// blad przy bezposrednim wczytywaniu do tablicy
 			// dziala przy przekazaniu przez zmienna posrednia
-			*(*(tab+x)+y) = data;
+			tab[x][y] = data;
 		}
 	}
 }
-void wyswietlMacierz(float *(*tab), int Size_x, int Size_y)
+void wyswietlMacierz(float **tab, int Size_x, int Size_y)
 {
 	int x, y;
 
@@ -31,34 +31,34 @@ void wyswietlMacierz(float *(*tab), int Size_x, int Size_y)
 	{
 		for (x = 0; x < Size_x; x++)
 		{
-			printf("| %g |", *(*(tab+x)+y));
+			printf("| %g |", tab[x][y]);
 		}
 		printf("\n");
 	}
 }
 
-void pomnozMacierze(float *(*m1), int sizeXm1,
-					float *(*m2), int sizeXm2, 
-					float *(*mw), int sizeXmw, int sizeYmw)
+void pomnozMacierze(float **m1, int sizeXm1,
+					float **m2, int sizeXm2, 
+					float **mw, int sizeXmw, int sizeYmw)
 {
 	float wMnozenie = 0, wKoncowy = 0;
 	int ax=0, ay=0;
 	int move = 0;
 	
-		for (ay = 0; ay < sizeYmw; ay++)		
+	for (ay = 0; ay < sizeYmw; ay++)		
+	{
+		for (ax = 0; ax < sizeXmw; ax++)
 		{
-			for (ax = 0; ax < sizeXmw; ax++)
+			for (move = 0; move < sizeXm1; move++)
 			{
-				for (move = 0; move < sizeXm1; move++)
-				{
-					wMnozenie = m1[move][ay] * m2[ax][move];
-					wKoncowy += wMnozenie;
-				}
-
-				mw[ax][ay] = wKoncowy;
-				wKoncowy = 0;
+				wMnozenie = m1[move][ay] * m2[ax][move];
+				wKoncowy += wMnozenie;
 			}
+
+			mw[ax][ay] = wKoncowy;
+			wKoncowy = 0;
 		}
+	}
 }
 
 float** alokujTablice2D(int x, int y)

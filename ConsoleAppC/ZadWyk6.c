@@ -1,4 +1,6 @@
 
+/* ZADANIA WYKLAD 6 */
+
 /* 6.1 Zaimplementuj funkcjê rozwi¹zuj¹c¹ uk³ad równañ z 2 niewiadomymi.Funkcja zwraca wartoœæ - 1 je¿eli nie istniej¹ rozwi¹zania(uk³ad jest sprzeczny), 0 je¿eli uk³ad posiada nieskoñczenie wiele rozwi¹zañ oraz 1 je¿eli istnieje rozwi¹zanie.Wartoœci szukane x i y s¹ przekazywane przez adres.
 Zaimplementuj program rozwi¹zuj¹cy uk³ad równañ. */
 int uklRownan(float *x1, float *y1, float *x2, float *y2)

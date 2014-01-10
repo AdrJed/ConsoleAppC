@@ -5,8 +5,9 @@
 #define INT_MAX 2147483647
 
 /* Zadania WYKLAD 4 */
+
 /* 4.1.a Napisz funkcjê sprawdzaj¹c¹ czy podana w argumencie liczba ca³kowita n jest liczb¹ pierwsz¹. */
-void f41(short int fNumTab[], int *max)
+void generujTabLiczbPierwszych(short int fNumTab[], int *max)
 {
 	for (int i = 0; i <= max; i++) { fNumTab[i] = true; }
 	/*
@@ -58,7 +59,7 @@ void Wyk4Zad1()
 
 	printf("Generowanie tablicy liczb pierwszych od 2 do %d\n", max);
 	fNumTab = calloc(max + 1, sizeof(char));
-	f41(fNumTab, &max);
+	generujTabLiczbPierwszych(fNumTab, &max);
 
 	for (int i = 2; i < max; i++) { if (fNumTab[i] == true) printf("%d ", i); }
 
@@ -67,7 +68,7 @@ void Wyk4Zad1()
 /* 4.2. Napisz funkcjê wyznaczaj¹c¹ najmniejsz¹ wspóln¹ wielokrotnoœæ dwóch liczb ca³kowitych a i b. */
 //to co 3.10
 /* 4.3. Napisz funkcjê, która dla danej wartoœci ca³kowitej n zwróci n-ty wyraz ci¹gu Fibonacciego. */
-int f43(int n)
+int elemCiaguFibonacciego(int n)
 {
 	if (n == 0){ return 0; }
 	else if (n == 1){ return 1; }
@@ -91,12 +92,12 @@ void Wyk4Zad3()
 	int n = 0;
 	printf("Podaj element n ciagu fibonacciego do wyswietlenia: ");
 	scanf("%d", &n);
-	printf("fib(%d) = %d ",n, f43(n));
+	printf("fib(%d) = %d ",n, elemCiaguFibonacciego(n));
 }
 /* 4.4. Napisz funkcjê, która dla danych 2 liczb ca³kowitych, wyznaczy wartoœæ dwumianu Newtona */
 //to co 3.15
 /* 4.5. Napisz funkcjê zwracaj¹c¹ wartoœæ sumy pierwszych n wyrazów ci¹gu arytmetycznego */
-float f45(int n, float r)
+float sumaElemCiaguArytmetycznego(int n, float r)
 {
 	float sum = 0;
 	int a1 = 1;
@@ -111,10 +112,10 @@ void Wyk4Zad5()
 	float r = 0;
 	printf("Suma ciagu arytmetycznego.\nn r: ");
 	scanf("%d %f", &n, &r);
-	printf("%g", f45(n, r));
+	printf("%g", sumaElemCiaguArytmetycznego(n, r));
 }
 /* 4.6. Napisz funkcjê zwracaj¹c¹ wartoœæ sumy pierwszych n wyrazów ci¹gu geometrycznego */
-float f46(int n, int q)
+float sumaElemCiaguGeometrycznego(int n, int q)
 {
 	float sum = 0;
 	int a1 = 1;
@@ -129,10 +130,10 @@ void Wyk4Zad6()
 	int q = 0;
 	printf("Suma ciagu geometrycznego.\nn q: ");
 	scanf("%d %f", &n, &q);
-	printf("%g", f46(n, q));
+	printf("%g", sumaElemCiaguGeometrycznego(n, q));
 }
 /* 4.7. Napisz funkcjê, która dla podanych d³ugoœci boków przyprostok¹tnych trójk¹ta prostok¹tnego zwróci d³ugoœæ boku przeciwprostok¹tnej. */
-float f47(float a, float b)
+float dlugPrzeciwprost(float a, float b)
 {
 	float c = 0;
 	c = sqrt((a*a) + (b*b));
@@ -144,5 +145,5 @@ void Wyk4Zad7()
 	float b = 0;
 	printf("Wartosc boku przeciwprostokatnej trojkata.\na b: ");
 	scanf("%f %f", &a, &b);
-	printf("%g", f47(a, b));
+	printf("%g", dlugPrzeciwprost(a, b));
 }

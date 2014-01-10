@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdbool.h>
-
 //#include "minimath.h"
 #include <math.h>
 

@@ -3,6 +3,7 @@
 #include <math.h>
 
 /* Zadania WYKLAD 5 */
+
 /* 5.1. Napisz funkcjê maksind, która dla danej tablicy t zawieraj¹cej n liczb zmiennopozycyjnych zwróci pozycjê (indeks) maksymalnej wartoœci w zbiorze. */
 int maxIndex(float fTab[], int tSize)
 {

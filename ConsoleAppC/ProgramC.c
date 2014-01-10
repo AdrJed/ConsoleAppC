@@ -68,7 +68,7 @@ struct programContentStruct
 	short int wykNr; // numer wyk≥adu
 	short int progNr; // numer programu dla danego wyk≥adu
 	void (*pPtr)(); // wskaünik na funkcjÍ danego programu
-	char *pInfo; // wskaünik na tekst informacji o programie
+	char *pInfo; // wskaünik na informacjÍ o programie
 };
 struct programContentStruct findProgramContent(struct programContentStruct pS[], int wNr, int pNr)
 {
