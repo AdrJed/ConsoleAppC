@@ -1,13 +1,80 @@
+#include <stdio.h>
+#include <stdlib.h>
 
 /* 7.1 Zaimplementuj program zamieniaj¹cy ci¹g zer i jedynek na liczbê w systemie dziesiêtnym zak³adaj¹c,
 	¿e ci¹g bitów reprezentuje liczbê ca³kowit¹ za pomoc¹ naturalnego kodu binarnego.*/
-int binToDec(char *binary)
+void normalizeBitString(char *ciag, int length)
 {
+	char *tmp = (char*)malloc(length);
+	int x = 0, i=0;
+	int start = 0;
+	
+	for (i = 0; i < length; i++)
+	{
+		if (ciag[i] == '0') start++;
+		else break;
+	}
+	for (i = start; i < length; i++)
+	{
+		if (ciag[i] == '\0')
+		{
+			tmp[x] = '\0';
+			break;
+		}		
+		else
+		{
+			tmp[x] = ciag[i];
+			x++;
+		}
+	}
+	for (i = 0; i <= x; i++)
+	{
+		ciag[i] = tmp[i];
+	}
 
+	free(tmp);
+}
+long long int binToInt(const char *ciag, int length)
+{
+	int bitLength = 0;
+	long long int n = 1;
+	long long int result = 0;
+
+	for (int i = 0; i < length; i++)
+	{
+		if (ciag[i] != '\0') bitLength++;
+		else break;
+	}
+
+	for (int i=0; i < length; i++)
+	{
+		if (ciag[i] == '\0') break;
+		else if (ciag[i] == '0')continue;
+		else
+		{
+			for (int pow = bitLength; pow > i+1; pow--) n *= 2;
+			result += n;
+			n = 1;
+		}
+	}
+
+	return result;
 }
 void Wyk7Zad1()
 {
+#define TAB_SIZE 33
 
+	char ciag[TAB_SIZE] = { '\0' };
+	long long int result;
+
+	printf("ciag bitow: ");
+	fgets(ciag, sizeof(ciag), stdin);
+	// usuwa zera z poczatku
+	normalizeBitString(ciag, TAB_SIZE);
+	result = binToInt(ciag, TAB_SIZE);
+	printf("%s -> %lld",ciag, result);
+
+#undef TAB_SIZE
 }
 /* 7.2 Zaimplementuj program zamieniaj¹cy ci¹g zer i jedynek na liczbê w systemie dziesiêtnym zak³adaj¹c,
 	¿e ci¹g bitów koduje liczbê ca³kowit¹ ze znakiem w reprezentacji uzupe³nieniowej do dwóch U2.*/
@@ -27,7 +94,7 @@ float bit32ToFloat(char *bit32)
 }
 void Wyk7Zad3()
 {
-
+	char bit32[32] = { '0' };
 }
 /* 7.4 Skonstruuj algorytm, który ma na celu wyznaczenie najwiêkszej mo¿liwej liczby dodatniej mo¿liwej do reprezentacji w
 	pojedynczej precyzji.Zaimplementuj ten algorytm i porównaj uzyskan¹ wartoœæ ze sta³¹ FLT_MAX zdefiniowan¹ w pliku nag³ówkowym float.h . */ 

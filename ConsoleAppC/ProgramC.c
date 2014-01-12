@@ -10,6 +10,11 @@
 #include "ZadWyk8.h"
 #include "macierze.h"
 
+/* Maksymalny indeks w tablicy struktur dostêpnych programów.
+Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
+#define WYK_COUNT 8 // Liczba wyk³adów !!!
+#define PROG_COUNT 40 // Liczba programów !!!
+
 /* Funkcja brakProgramu jesli nie znaleziono programu */ 
 void brakProgramu()
 {
@@ -24,6 +29,7 @@ void programInfo()
 	printf("help [kod] - informacje o programie z podanym kodem\n");
 	printf("list - wypisuje dostepne kody programow do uruchomienia\n");
 	printf("list [nr wykladu] - wyswietla liste dostepnych programow dla wykladu\n");
+	printf("tinfo - informacja o rozmiarach poszczegolnych typow danych\n");
 	printf("exit - wyjscie\n");
 }
 /* Bezpieczna funkcja pobierania argumentow z stdin */
@@ -58,10 +64,6 @@ static int getLine(char *prmpt, char *buff, size_t sz) {
 #undef OK NO_INPUT TO_LONG
 }
 
-/* Maksymalny indeks w tablicy struktur dostêpnych programów.
-   Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
-#define WYK_COUNT 8 // Liczba wyk³adów !!!
-#define PROG_COUNT 39 // Liczba programów !!!
 /* Struktura programów do uruchomienia  */
 struct programContentStruct
 {
@@ -124,6 +126,8 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		//[] = { 6, 1, Wyk6Zad1, "6.1 - " },
 		//[] = { 6, 2, Wyk6Zad2, "6.2 - " },
 		[38] = { 6, 3, Wyk6Zad3, "6.3 - odwracanie elementow w tablicy" },
+		[39] = { 7, 1, Wyk7Zad1, "7.1 - zamiana z systemu binarnego w dziesietny" },
+		[PROG_COUNT] = { 0, 0, brakProgramu, "koniec listy" },
 	};
 
 	for (int i = 0; i < p; i++)
@@ -229,6 +233,12 @@ int main()
 		else if (!strcmp("macierze", arg))
 		{
 			macierze();
+			continue;
+		}
+		// informacja o rozmiarach typow danych komputera
+		else if (!strcmp("tinfo", arg))
+		{
+			primitiveTypesSizeInfo();
 			continue;
 		}
 		// przerywa program, jeœli wpisano "exit"

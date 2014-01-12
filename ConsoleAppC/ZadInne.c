@@ -7,7 +7,7 @@ Zobacz, jakie s¹ to wielkoœci.Do zbadania wielkoœci danego typu mo¿esz u¿yæ funk
 nastêpuj¹cych tablic: int[20], float[20], double[20] oraz wielowymiarowych int[5][2][10],
 float[5][5][5], i double[2][2][6]. Przed napisaniem programu spróbuj oszacowaæ ile zajmuj¹ w
 pamiêci podane tablice. SprawdŸ te¿, ile bajtów pamiêci zajmuje sama zmienna wskaŸnikowa. */
-void Wskazniki1()
+void primitiveTypesSizeInfo()
 {
 	short int sInt; int I; long int lInt; long long int llInt;
 	float F; char c; double D;
@@ -15,16 +15,17 @@ void Wskazniki1()
 	int iTab[20]; float fTab[20]; double dTab[20];
 	int mDimITab[5][2][10]; float mDimFTab[5][5][5]; double mDimDTab[2][2][6];
 
-	printf("Size of variables in bytes (B)\n");
+	printf("Rozmiar typow prymitywnych w bajtach(B)/bitach(b)\n");
 	printf(
-		" short int = %d\n int = %d\n long int = %d\n long long int = %d\n float = %d\n char = %d\n double = %d\n",
-		sizeof(sInt), sizeof(I), sizeof(lInt), sizeof(llInt), sizeof(F), sizeof(c), sizeof(D));
+		" short int = %dB/%db\n int = %dB/%db\n long int = %dB/%db\n long long int = %dB/%db\n float = %dB/%db\n char = %dB/%db\n double = %dB/%db\n",
+		sizeof(sInt), sizeof(sInt)* 8, sizeof(I), sizeof(I)*8, sizeof(lInt), sizeof(lInt)*8, sizeof(llInt), sizeof(llInt)*8,
+		sizeof(F), sizeof(F)*8, sizeof(c), sizeof(c)*8, sizeof(D),sizeof(D)*8);
 	printf(
-		" char[6] = %d\n int[20] = %d\n float[20] = %d\n double[20] = %d\n",
+		" char[6] = %dB\n int[20] = %dB\n float[20] = %dB\n double[20] = %d\n",
 		sizeof(cNapis), sizeof(iTab), sizeof(fTab), sizeof(dTab)
 		);
 	printf(
-		" int[5][2][10] = %d\n float[5][5][5] = %d\n double[2][2][6] = %d\n",
+		" int[5][2][10] = %dB\n float[5][5][5] = %dB\n double[2][2][6] = %dB\n",
 		sizeof(mDimITab), sizeof(mDimFTab), sizeof(mDimDTab)
 		);
 }
