@@ -48,6 +48,9 @@
     <ClCompile Include="ZadWyk8.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ZadWyk9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">

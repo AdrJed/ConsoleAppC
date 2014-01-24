@@ -16,10 +16,7 @@ void wczytajMacierz(float **tab, int Size_x, int Size_y)
 		for (x = 0; x < Size_x; x++)
 		{
 			printf("%d,%d:", x+1, y+1);
-			scanf("%f", &data);
-			// blad przy bezposrednim wczytywaniu do tablicy
-			// dziala przy przekazaniu przez zmienna posrednia
-			tab[x][y] = data;
+			scanf("%f", (*(tab+x)+y));
 		}
 	}
 }

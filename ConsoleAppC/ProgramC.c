@@ -160,7 +160,7 @@ void printProgramList(struct programContentStruct pS[], int wNr)
 		}
 		printf("Lacznie programow: %d\n", listedCount);
 	}
-	// Jesli wprowadzono numer wykladu, bedzie on rozny od zera
+	// Jesli wprowadzono numer wykladu, listuje dan¹ grupê
 	else
 	{
 		for (int i = 0; i < PROG_COUNT; i++)

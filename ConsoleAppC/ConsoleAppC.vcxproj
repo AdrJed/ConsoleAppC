@@ -90,6 +90,7 @@
     <ClCompile Include="ZadWyk6.c" />
     <ClCompile Include="ZadWyk7.c" />
     <ClCompile Include="ZadWyk8.c" />
+    <ClCompile Include="ZadWyk9.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="macierze.h" />

@@ -1,7 +1,7 @@
 // Problem skoczka szachowego
 // Mamy punkty A,B na planszy szachowej 8x8
 // Ile ruchów musi wykonaæ konik aby przejœæ z A do B ?
-// Konik mo¿e wykonywaæ ruchy wed³ug nastêpuj¹co:
+// Konik mo¿e wykonywaæ ruchy nastêpuj¹co:
 //	- najpierw ruch o dwa pola w pionie lub poziomie
 //  - nastêpnie ruch o jedno pole prostopadle do poprzedniego ruchu w jedn¹ z dwóch stron
 

@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdbool.h>
 //#include "minimath.h"
 #include <math.h>
-
 /* Zadania WYK£AD 3 */
 
 /* 3.1. Napisz program, który wczyta dwie liczby rzeczywiste a i b i wyœwietli wyniki operacji arytmetycznych: a+b, a-b, a*b, a/b.
@@ -37,6 +37,7 @@ void Wyk3Zad3()
 
 	int firstNum = 2, a = 0;
 	bool firstNumTab[MAX + 1];
+	char input[8];
 
 	for (int x = 2; x <= MAX; x++) { firstNumTab[x] = true; }
 
@@ -49,17 +50,17 @@ void Wyk3Zad3()
 			firstNumTab[j] = false; // i ka¿d¹ z nich usuwaj ze zbioru
 	}
 	printf("\t Wygenerowano \n");
+	printf("Wprowadz 0 aby wyjsc.\n");
+	//for (int i = 2; i < MAX; i++) { if (firstNumTab[i] == true) printf("%d ", i); }
 
-	for (int i = 2; i < MAX; i++) { if (firstNumTab[i] == true) printf("%d ", i); }
-
-	//	Wykonywanie dopóki liczba poza zakresem {INT_MIN,...,INT_MAX} && a != 0	
-	do
+	do	//	Wykonywanie dopóki liczba poza zakresem {INT_MIN,...,INT_MAX} && a != 0	
 	{
 		do
 		{
-			printf("\nWprowadz liczbe calkowita a:");
-			scanf("%d", &a);
-
+			printf("\nWprowadz liczbe calkowita a: ");
+			fgets(input, 8, stdin);
+			a = atoi(input);
+			
 			if (a <= MAX && a >= -MAX) { break; } // Przerywanie pêtli je¿eli podana liczba nale¿y do zakresu
 			else { printf("Wprowadzono liczbe z poza zakresu tablicy liczb pierwszych \n"); }
 		} while (a >= MAX && a <= -MAX);
@@ -326,6 +327,15 @@ void Wyk3Zad13()
 	Napisz przogram realizuj¹cy tak¹ zamianê. */
 
 /* 3.15. Napisz program wyznaczaj¹cy wartoœæ symbolu Newtona dla dwóch liczb ca³kowitych a i b. */
+float silnia2(int n)
+{
+	long wynik = 1;
+
+	for (int i = 0; i <= n; i++)
+		wynik *= i;
+
+	return wynik;
+}
 void Wyk3Zad15()
 {
 	int n, k;
@@ -339,8 +349,7 @@ void Wyk3Zad15()
 		if (k <= 0 || n < k) printf("n>k>0\t");
 	} while ( k<=0 || n<k );
 
-	wynik = silnia(n) / silnia(k)*silnia(n - k);
-	
+	wynik = silnia2(n) / silnia2(k)*silnia2(n - k);	
 
 	printf("%g", wynik);
 }
