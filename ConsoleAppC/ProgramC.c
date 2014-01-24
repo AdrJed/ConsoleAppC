@@ -8,12 +8,13 @@
 #include "ZadWyk6.h"
 #include "ZadWyk7.h"
 #include "ZadWyk8.h"
+#include "ZadWyk9.h"
 #include "macierze.h"
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
 Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
-#define WYK_COUNT 8 // Liczba wyk³adów !!!
-#define PROG_COUNT 40 // Liczba programów !!!
+#define WYK_COUNT 9 // Liczba wyk³adów !!!
+#define PROG_COUNT 50 // Liczba programów !!!
 
 /* Funkcja brakProgramu jesli nie znaleziono programu */ 
 void brakProgramu()
@@ -127,6 +128,7 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		//[] = { 6, 2, Wyk6Zad2, "6.2 - " },
 		[38] = { 6, 3, Wyk6Zad3, "6.3 - odwracanie elementow w tablicy" },
 		[39] = { 7, 1, Wyk7Zad1, "7.1 - zamiana z systemu binarnego w dziesietny" },
+		[40] = { 9, 2, Wyk9Zad2, "9.2 - zapis losowych liczb do pliku" },
 		[PROG_COUNT] = { 0, 0, brakProgramu, "koniec listy" },
 	};
 

@@ -1,11 +1,60 @@
-
+#include <stdio.h>
+#include <stdlib.h>
 /* Zadania WYKLAD 9 */
 
 /*
 9.1 Napisz program kopiuj¹cy zawartoœæ pliku do innego pliku
 
-9.2 Napisz program, który do pliku zapisze N wygenerowanych liczb losowych z przedzia³u '[A,B]'. Nazwê pliku wynikowego oraz wartoœci A, B, i N podaje u¿ytkownik
+/* 9.2 Napisz program, który do pliku zapisze N wygenerowanych liczb losowych z przedzia³u '[A,B]'. 
+	Nazwê pliku wynikowego oraz wartoœci A, B, i N podaje u¿ytkownik */
+int saveRandomNumToFile(char *filename, int randMin, int randMax, int randCount)
+{
+	FILE *plik;
+	char input[8];
+	int random;
+	
+	if (plik = fopen(filename, "w") == NULL)
+	{
+		printf("Nie moge otworzyc pliku do zapisu!\n");
+		return 1;
+	}
 
+	randMax = randMax - randMin + 1;
+	srand(time(NULL));
+
+	for (int i = 0; i <= randCount; i++)
+	{
+		random = rand() % randMax + randMin;
+		printf("%d\n", random);
+
+		sprintf(input, "%d\n", random);
+		fprintf(plik, "%s", input);
+	}
+
+	fclose(plik);
+	return 0;
+}
+void Wyk9Zad2()
+{
+	int randMin=0, randMax=0, randCount=0;
+	char fileName[32];
+
+	do
+	{
+		printf("Podaj nazwe pliku: ");
+		fscanf(stdin, "%s", fileName);
+		sprintf(fileName, "%s.txt", fileName);
+	} while (0);
+
+	printf("nazwa pliku: %s\n", fileName);
+	printf("Podaj minimalna i maksymalna liczbe losowa oraz ilosc liczb.\n");
+	printf("min max count: ");
+	scanf(" %d %d %d", &randMin, &randMax, &randCount);
+	if (saveRandomNumToFile(fileName, randMin, randMax, randCount) != 0)
+		printf("Wystapil blad\n");
+	else printf("Zapisano liczby do pliku.\n");
+}
+/*
 9.3 Napisz program, który wyœwietli na ekranie wszystkie komentarze z podanego pliku Ÿród³owego w jêzyku C
 
 9.4 Napisz program, który wyœwietli na ekranie najd³u¿szy wyraz z podanego pliku tekstowego.

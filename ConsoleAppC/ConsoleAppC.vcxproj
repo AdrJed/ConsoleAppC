@@ -103,6 +103,7 @@
     <ClInclude Include="ZadWyk6.h" />
     <ClInclude Include="ZadWyk7.h" />
     <ClInclude Include="ZadWyk8.h" />
+    <ClInclude Include="ZadWyk9.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleAppC.rc" />
