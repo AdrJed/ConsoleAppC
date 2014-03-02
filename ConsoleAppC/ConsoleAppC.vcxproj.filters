@@ -13,78 +13,102 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Zadania Wyklad">
+      <UniqueIdentifier>{0c4f958b-c816-4225-8089-43a485761177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Macierze">
+      <UniqueIdentifier>{6e71b794-19cd-41bd-a6d7-dd8e3aaafc71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Zadania Wyklad">
+      <UniqueIdentifier>{53a61372-0992-477e-8700-7dbf97cd1d2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Macierze">
+      <UniqueIdentifier>{e8b5dee1-9bdc-4bb6-a34c-b22cd451dc6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Rysowanie">
+      <UniqueIdentifier>{749647ad-3bb5-4434-991d-324a7cb07d83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Rysowanie">
+      <UniqueIdentifier>{fe917e9d-0b83-4b22-beca-0810cc254780}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProgramC.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ZadWyk3.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk4.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk5.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk6.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ZadInne.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="minimath.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="macierze.c">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="skoczekSzachowy.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="macierze2.c">
+      <Filter>Source Files\Macierze</Filter>
+    </ClCompile>
+    <ClCompile Include="ZadWyk3.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="ZadWyk4.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="ZadWyk5.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="ZadWyk6.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
     <ClCompile Include="ZadWyk7.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Zadania Wyklad</Filter>
     </ClCompile>
     <ClCompile Include="ZadWyk8.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Zadania Wyklad</Filter>
     </ClCompile>
     <ClCompile Include="ZadWyk9.c">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="rysowanie\trojkat.c">
+      <Filter>Source Files\Rysowanie</Filter>
+    </ClCompile>
+    <ClCompile Include="rysowanie\RysujMain.c">
+      <Filter>Source Files\Rysowanie</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ZadWyk3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="ZadInne.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="macierze2.h">
+      <Filter>Header Files\Macierze</Filter>
+    </ClInclude>
+    <ClInclude Include="ZadWyk3.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
     <ClInclude Include="ZadWyk4.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Zadania Wyklad</Filter>
     </ClInclude>
     <ClInclude Include="ZadWyk5.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Zadania Wyklad</Filter>
     </ClInclude>
     <ClInclude Include="ZadWyk6.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="minimath.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="macierze.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Zadania Wyklad</Filter>
     </ClInclude>
     <ClInclude Include="ZadWyk7.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Zadania Wyklad</Filter>
     </ClInclude>
     <ClInclude Include="ZadWyk8.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Zadania Wyklad</Filter>
     </ClInclude>
     <ClInclude Include="ZadWyk9.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="rysowanie\trojkat.h">
+      <Filter>Header Files\Rysowanie</Filter>
+    </ClInclude>
+    <ClInclude Include="rysowanie\RysujMain.h">
+      <Filter>Header Files\Rysowanie</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

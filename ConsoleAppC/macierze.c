@@ -1,6 +1,7 @@
-// Adrian Jêdrzejak - 267531
-// Mno¿enie macierzy w tablicach dynamicznych
-
+/*
+ * Adrian Jêdrzejak - 267531
+ * Mno¿enie macierzy w tablicach dynamicznych
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -127,4 +128,6 @@ void macierze()
 	if (m1 != NULL) zwolnijTablice2D(m1, m1X);
 }
 
-//void main(){macierze();}
+
+
+

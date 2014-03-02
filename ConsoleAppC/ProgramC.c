@@ -9,7 +9,7 @@
 #include "ZadWyk7.h"
 #include "ZadWyk8.h"
 #include "ZadWyk9.h"
-#include "macierze.h"
+#include "macierze2.h"
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
 Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
@@ -128,7 +128,8 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		//[] = { 6, 2, Wyk6Zad2, "6.2 - " },
 		[38] = { 6, 3, Wyk6Zad3, "6.3 - odwracanie elementow w tablicy" },
 		[39] = { 7, 1, Wyk7Zad1, "7.1 - zamiana z systemu binarnego w dziesietny" },
-		[40] = { 9, 2, Wyk9Zad2, "9.2 - zapis losowych liczb do pliku" },
+		[40] = { 8, 1, Wyk8Zad1, "8.1 - lista znakow ASCII" },
+		[41] = { 9, 2, Wyk9Zad2, "9.2 - zapis losowych liczb do pliku" },
 		[PROG_COUNT] = { 0, 0, brakProgramu, "koniec listy" },
 	};
 
@@ -240,6 +241,7 @@ int main()
 		// informacja o rozmiarach typow danych komputera
 		else if (!strcmp("tinfo", arg))
 		{
+			//Wskazniki3();
 			primitiveTypesSizeInfo();
 			continue;
 		}

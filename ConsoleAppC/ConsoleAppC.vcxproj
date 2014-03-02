@@ -79,9 +79,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="macierze.c" />
-    <ClCompile Include="minimath.c" />
+    <ClCompile Include="macierze2.c" />
     <ClCompile Include="ProgramC.c" />
+    <ClCompile Include="rysowanie\RysujMain.c" />
+    <ClCompile Include="rysowanie\trojkat.c" />
     <ClCompile Include="skoczekSzachowy.c" />
     <ClCompile Include="ZadInne.c" />
     <ClCompile Include="ZadWyk3.c" />
@@ -93,8 +94,9 @@
     <ClCompile Include="ZadWyk9.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="macierze.h" />
-    <ClInclude Include="minimath.h" />
+    <ClInclude Include="macierze2.h" />
+    <ClInclude Include="rysowanie\RysujMain.h" />
+    <ClInclude Include="rysowanie\trojkat.h" />
     <ClInclude Include="ZadInne.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ZadWyk3.h" />

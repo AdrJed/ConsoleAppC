@@ -46,3 +46,33 @@ void Wskazniki2()
 
 	free(iTab);
 }
+
+void Wskazniki3()
+{
+	int **a[2];
+	int *b[2], *c[3];
+	int q=1, w=2, e=3, r=4, y=5;
+
+	b[0] = q; b[1] = w;
+	c[0] = e; c[1] = r; c[2] = y;
+
+	a[0] = b;
+	a[1] = c;
+
+	printf("a[0][0] = %d\na[0][1] = %d\na[1][0] = %d\na[1][1] = %d\n", a[0][0], a[0][1], a[1][0], a[1][2]);
+	printf("&a[0][1] = %p, &b[1] = %p", &a[0][1], &b[1]);
+	printf("&a[0] = %p\n", &a[0]);
+
+	int ****h=0;
+	int ***j=0;
+	int **k=0;
+	int *l=0;
+
+	h = &j;
+	j = &k;
+	k = &l;
+	l = &q;
+
+	printf("%d", h[0][0][0][0]);
+
+}

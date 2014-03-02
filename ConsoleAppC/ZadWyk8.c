@@ -5,11 +5,18 @@
 	ósemkowej i szesnastkowej. */
 void listASCII()
 {
-
+	int i;
+	printf("\t  ASCII\t  Dec\t  Oct\t  Hex  \n");
+	printf("\t%c", 201);for(i=0;i<31;i++)printf("%c", 205); printf("%c\n", 187);
+	for (int i = 0; i < 256; i++)
+	{
+		printf("\t%c %c\t%c %d\t %c%o\t %c%x \t%c\n",186, i,186, i,186, i,186, i, 186);
+	}
+	printf("\t%c", 200);for(i=0;i<31;i++)printf("%c",205); printf("%c\n", 188);
 }
 void Wyk8Zad1()
 {
-
+	listASCII();
 }
 /* 8.2 Napisz kalkulator wykonuj¹cy operacje dodawania, odejmowania, mno¿enia i dzielenia bez reszty na liczbach ca³kowitych 
 	zawieraj¹cych nawet do 200 cyfr.Sygnalizuj odpowiednim komunikatem wyst¹pienie nadmiaru. */
