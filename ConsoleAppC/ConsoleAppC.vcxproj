@@ -95,8 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="macierze2.h" />
+    <ClInclude Include="rysowanie\ProgramC.h" />
     <ClInclude Include="rysowanie\RysujMain.h" />
     <ClInclude Include="rysowanie\trojkat.h" />
+    <ClInclude Include="zadania_wyklad\ZadWszystkie.h" />
     <ClInclude Include="ZadInne.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ZadWyk3.h" />

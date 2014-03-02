@@ -110,6 +110,12 @@
     <ClInclude Include="rysowanie\RysujMain.h">
       <Filter>Header Files\Rysowanie</Filter>
     </ClInclude>
+    <ClInclude Include="rysowanie\ProgramC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWszystkie.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleAppC.rc">

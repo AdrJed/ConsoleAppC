@@ -1,6 +1,7 @@
+#define PROGRAM_C_START_MAIN 0		/* 1 jesli jest to punkt wejscia */
+
 #include <stdio.h>
 #include <stdbool.h>
-
 #include "ZadInne.h"
 #include "ZadWyk3.h"
 #include "ZadWyk4.h"
@@ -10,6 +11,7 @@
 #include "ZadWyk8.h"
 #include "ZadWyk9.h"
 #include "macierze2.h"
+#include "rysowanie\RysujMain.h"
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
 Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
@@ -180,7 +182,11 @@ void printProgramList(struct programContentStruct pS[], int wNr)
 }
 
 /* -- PUNKT WEJŒCIA -- */
+#if PROGRAM_C_START_MAIN == 1
 int main()
+#else
+int programCMain()
+#endif
 {	
 	int wN = 0,						// numer wyk³adu
 		pN = 0;						// numer programu
@@ -236,6 +242,12 @@ int main()
 		else if (!strcmp("macierze", arg))
 		{
 			macierze();
+			continue;
+		}
+		// modu³ rysowania figur
+		else if (!strcmp("rysuj", arg))
+		{
+			//rysujMain();
 			continue;
 		}
 		// informacja o rozmiarach typow danych komputera

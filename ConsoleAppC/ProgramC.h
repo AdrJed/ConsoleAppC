@@ -1,0 +1,4 @@
+
+#ifndef PROGRAM_C_START_MAIN
+#define PROGRAM_C_START_MAIN 0
+#endif
