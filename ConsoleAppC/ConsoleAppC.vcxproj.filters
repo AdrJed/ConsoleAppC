@@ -31,90 +31,117 @@
     <Filter Include="Header Files\Rysowanie">
       <UniqueIdentifier>{fe917e9d-0b83-4b22-beca-0810cc254780}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Inne">
+      <UniqueIdentifier>{e68f8394-0bae-4e0c-9fb6-daa467c98718}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Inne">
+      <UniqueIdentifier>{e8ae0ddc-0611-41cf-b9a4-a609d65a51f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JPR">
+      <UniqueIdentifier>{595d8025-a958-475f-83d8-fc9667e96e41}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ProgramC.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ZadInne.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="skoczekSzachowy.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="macierze2.c">
+    <ClCompile Include="macierze\macierze2.c">
       <Filter>Source Files\Macierze</Filter>
     </ClCompile>
-    <ClCompile Include="ZadWyk3.c">
-      <Filter>Source Files\Zadania Wyklad</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk4.c">
-      <Filter>Source Files\Zadania Wyklad</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk5.c">
-      <Filter>Source Files\Zadania Wyklad</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk6.c">
-      <Filter>Source Files\Zadania Wyklad</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk7.c">
-      <Filter>Source Files\Zadania Wyklad</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk8.c">
-      <Filter>Source Files\Zadania Wyklad</Filter>
-    </ClCompile>
-    <ClCompile Include="ZadWyk9.c">
-      <Filter>Source Files\Zadania Wyklad</Filter>
+    <ClCompile Include="rysowanie\RysujMain.c">
+      <Filter>Source Files\Rysowanie</Filter>
     </ClCompile>
     <ClCompile Include="rysowanie\trojkat.c">
       <Filter>Source Files\Rysowanie</Filter>
     </ClCompile>
-    <ClCompile Include="rysowanie\RysujMain.c">
-      <Filter>Source Files\Rysowanie</Filter>
+    <ClCompile Include="zadania_wyklad\ZadWyk3.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="zadania_wyklad\ZadWyk4.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="zadania_wyklad\ZadWyk5.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="zadania_wyklad\ZadWyk6.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="zadania_wyklad\ZadWyk7.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="zadania_wyklad\ZadWyk8.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="zadania_wyklad\ZadWyk9.c">
+      <Filter>Source Files\Zadania Wyklad</Filter>
+    </ClCompile>
+    <ClCompile Include="inne\skoczekSzachowy.c">
+      <Filter>Source Files\Inne</Filter>
+    </ClCompile>
+    <ClCompile Include="inne\ZadInne.c">
+      <Filter>Source Files\Inne</Filter>
+    </ClCompile>
+    <ClCompile Include="threads.c">
+      <Filter>Source Files\Inne</Filter>
+    </ClCompile>
+    <ClCompile Include="varSwitch.c">
+      <Filter>Source Files\Inne</Filter>
+    </ClCompile>
+    <ClCompile Include="inne\csvTab.c">
+      <Filter>Source Files\Inne</Filter>
+    </ClCompile>
+    <ClCompile Include="jprDrzewa.c">
+      <Filter>Source Files\JPR</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ZadInne.h">
+    <ClInclude Include="rysowanie\ProgramC.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="macierze2.h">
+    <ClInclude Include="macierze\macierze2.h">
       <Filter>Header Files\Macierze</Filter>
-    </ClInclude>
-    <ClInclude Include="ZadWyk3.h">
-      <Filter>Header Files\Zadania Wyklad</Filter>
-    </ClInclude>
-    <ClInclude Include="ZadWyk4.h">
-      <Filter>Header Files\Zadania Wyklad</Filter>
-    </ClInclude>
-    <ClInclude Include="ZadWyk5.h">
-      <Filter>Header Files\Zadania Wyklad</Filter>
-    </ClInclude>
-    <ClInclude Include="ZadWyk6.h">
-      <Filter>Header Files\Zadania Wyklad</Filter>
-    </ClInclude>
-    <ClInclude Include="ZadWyk7.h">
-      <Filter>Header Files\Zadania Wyklad</Filter>
-    </ClInclude>
-    <ClInclude Include="ZadWyk8.h">
-      <Filter>Header Files\Zadania Wyklad</Filter>
-    </ClInclude>
-    <ClInclude Include="ZadWyk9.h">
-      <Filter>Header Files\Zadania Wyklad</Filter>
-    </ClInclude>
-    <ClInclude Include="rysowanie\trojkat.h">
-      <Filter>Header Files\Rysowanie</Filter>
     </ClInclude>
     <ClInclude Include="rysowanie\RysujMain.h">
       <Filter>Header Files\Rysowanie</Filter>
     </ClInclude>
-    <ClInclude Include="rysowanie\ProgramC.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="rysowanie\trojkat.h">
+      <Filter>Header Files\Rysowanie</Filter>
     </ClInclude>
     <ClInclude Include="zadania_wyklad\ZadWszystkie.h">
       <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWyk3.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWyk4.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWyk5.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWyk6.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWyk7.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWyk8.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="zadania_wyklad\ZadWyk9.h">
+      <Filter>Header Files\Zadania Wyklad</Filter>
+    </ClInclude>
+    <ClInclude Include="inne\ZadInne.h">
+      <Filter>Header Files\Inne</Filter>
+    </ClInclude>
+    <ClInclude Include="threads.h">
+      <Filter>Header Files\Inne</Filter>
+    </ClInclude>
+    <ClInclude Include="varSwitch.h">
+      <Filter>Header Files\Inne</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

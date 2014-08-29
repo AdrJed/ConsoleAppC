@@ -79,35 +79,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="macierze2.c" />
+    <ClCompile Include="inne\csvTab.c" />
+    <ClCompile Include="inne\skoczekSzachowy.c" />
+    <ClCompile Include="inne\ZadInne.c" />
+    <ClCompile Include="jprDrzewa.c" />
+    <ClCompile Include="macierze\macierze2.c" />
     <ClCompile Include="ProgramC.c" />
     <ClCompile Include="rysowanie\RysujMain.c" />
     <ClCompile Include="rysowanie\trojkat.c" />
-    <ClCompile Include="skoczekSzachowy.c" />
-    <ClCompile Include="ZadInne.c" />
-    <ClCompile Include="ZadWyk3.c" />
-    <ClCompile Include="ZadWyk4.c" />
-    <ClCompile Include="ZadWyk5.c" />
-    <ClCompile Include="ZadWyk6.c" />
-    <ClCompile Include="ZadWyk7.c" />
-    <ClCompile Include="ZadWyk8.c" />
-    <ClCompile Include="ZadWyk9.c" />
+    <ClCompile Include="threads.c" />
+    <ClCompile Include="varSwitch.c" />
+    <ClCompile Include="zadania_wyklad\ZadWyk3.c" />
+    <ClCompile Include="zadania_wyklad\ZadWyk4.c" />
+    <ClCompile Include="zadania_wyklad\ZadWyk5.c" />
+    <ClCompile Include="zadania_wyklad\ZadWyk6.c" />
+    <ClCompile Include="zadania_wyklad\ZadWyk7.c" />
+    <ClCompile Include="zadania_wyklad\ZadWyk8.c" />
+    <ClCompile Include="zadania_wyklad\ZadWyk9.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="macierze2.h" />
+    <ClInclude Include="inne\ZadInne.h" />
+    <ClInclude Include="macierze\macierze2.h" />
     <ClInclude Include="rysowanie\ProgramC.h" />
     <ClInclude Include="rysowanie\RysujMain.h" />
     <ClInclude Include="rysowanie\trojkat.h" />
+    <ClInclude Include="threads.h" />
+    <ClInclude Include="varSwitch.h" />
     <ClInclude Include="zadania_wyklad\ZadWszystkie.h" />
-    <ClInclude Include="ZadInne.h" />
+    <ClInclude Include="zadania_wyklad\ZadWyk3.h" />
+    <ClInclude Include="zadania_wyklad\ZadWyk4.h" />
+    <ClInclude Include="zadania_wyklad\ZadWyk5.h" />
+    <ClInclude Include="zadania_wyklad\ZadWyk6.h" />
+    <ClInclude Include="zadania_wyklad\ZadWyk7.h" />
+    <ClInclude Include="zadania_wyklad\ZadWyk8.h" />
+    <ClInclude Include="zadania_wyklad\ZadWyk9.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="ZadWyk3.h" />
-    <ClInclude Include="ZadWyk4.h" />
-    <ClInclude Include="ZadWyk5.h" />
-    <ClInclude Include="ZadWyk6.h" />
-    <ClInclude Include="ZadWyk7.h" />
-    <ClInclude Include="ZadWyk8.h" />
-    <ClInclude Include="ZadWyk9.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleAppC.rc" />

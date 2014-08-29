@@ -1,17 +1,12 @@
-#define PROGRAM_C_START_MAIN 0		/* 1 jesli jest to punkt wejscia */
+#define PROGRAM_C_START_MAIN 1		/* 1 jesli jest to punkt wejscia */
 
 #include <stdio.h>
 #include <stdbool.h>
-#include "ZadInne.h"
-#include "ZadWyk3.h"
-#include "ZadWyk4.h"
-#include "ZadWyk5.h"
-#include "ZadWyk6.h"
-#include "ZadWyk7.h"
-#include "ZadWyk8.h"
-#include "ZadWyk9.h"
-#include "macierze2.h"
+#include "zadania_wyklad\ZadWszystkie.h"
+#include "inne\ZadInne.h"
+#include "macierze\macierze2.h"
 #include "rysowanie\RysujMain.h"
+#include "varSwitch.h"
 
 /* Maksymalny indeks w tablicy struktur dostêpnych programów.
 Sprawdziæ czy zgadza siê po odkomentowaniu nowego programu */
@@ -68,14 +63,14 @@ static int getLine(char *prmpt, char *buff, size_t sz) {
 }
 
 /* Struktura programów do uruchomienia  */
-struct programContentStruct
+typedef struct ProgramContent
 {
 	short int wykNr; // numer wyk³adu
 	short int progNr; // numer programu dla danego wyk³adu
 	void (*pPtr)(); // wskaŸnik na funkcjê danego programu
 	char *pInfo; // wskaŸnik na informacjê o programie
-};
-struct programContentStruct findProgramContent(struct programContentStruct pS[], int wNr, int pNr)
+} ProgramContent;
+ProgramContent findProgramContent(ProgramContent pS[], int wNr, int pNr)
 {
 	for (int i = 0; i < PROG_COUNT; i++)
 	{
@@ -85,11 +80,11 @@ struct programContentStruct findProgramContent(struct programContentStruct pS[],
 	return pS[0]; //Jeœli nie znaleziono odpowiedniego programu, zwróc strukturê brakProgramu
 }
 /* Funkcja dodaj¹ca do tablicy struktur aktualnie gotowe programy */
-void addProgramContent(struct programContentStruct pS[], int p)
+void addProgramContent(ProgramContent pS[], int p)
 
 {
 	/* Aktualnie niegotowe programy s¹ zakomentowane */
-	struct programContentStruct pCS[] = {
+	ProgramContent pCS[] = {
 		[0] = { 0, 0, brakProgramu, "brak programu" },//struktura brakProgramu
 		[1] = { 3, 1, Wyk3Zad1, "3.1 - oblicza dla a,b: a+b, a-b, a*b, a/b" },
 		[2] = { 3, 2, Wyk3Zad2, "3.2 - sprawdzanie parzystosci liczby" },
@@ -140,15 +135,15 @@ void addProgramContent(struct programContentStruct pS[], int p)
 		pS[i] = pCS[i];
 	}
 }
-void runProgram(struct programContentStruct pS[], int wNr, int pNr)
+void runProgram(ProgramContent pS[], int wNr, int pNr)
 {
 	findProgramContent(pS, wNr, pNr).pPtr();
 }
-void printProgramHelp(struct programContentStruct pS[], int wNr, int pNr)
+void printProgramHelp(ProgramContent pS[], int wNr, int pNr)
 {
 	printf(findProgramContent(pS, wNr, pNr).pInfo);
 }
-void printProgramList(struct programContentStruct pS[], int wNr)
+void printProgramList(ProgramContent pS[], int wNr)
 {
 	int listedCount = 0; // Licznik iloœci wyœwietlonych programów
 
@@ -187,12 +182,12 @@ int main()
 #else
 int programCMain()
 #endif
-{	
+{
 	int wN = 0,						// numer wyk³adu
 		pN = 0;						// numer programu
 
-	struct programContentStruct selectedPS;// struktura aktualnego programu;
-	struct programContentStruct pS[PROG_COUNT];// lista struktur wszystkich dostepnych programow;
+	ProgramContent selectedPS;// struktura aktualnego programu;
+	ProgramContent pS[PROG_COUNT];// lista struktur wszystkich dostepnych programow;
 	addProgramContent(pS, PROG_COUNT);// dodawanie dostêpnych programów do listy
 
 	programInfo();
@@ -203,7 +198,7 @@ int programCMain()
 		char args[32] = { '0' };	// wszystkie wprowadzone argumenty
 		char arg[32] = { '0' };		// wybrany argument
 		wN = 0; pN = 0;				// numer wykladu i programu
-		
+
 		fflush(stdin);
 		getLine("\n> ", args, sizeof(args));
 		sscanf(args, "%s %d.%d", arg, &wN, &pN);
@@ -211,24 +206,24 @@ int programCMain()
 		// listowanie dostêpnych programów
 		if (!strcmp("list", arg))
 		{
-			if (wN <= WYK_COUNT) 
+			if (wN <= WYK_COUNT)
 				printProgramList(&pS, wN);
-			else 
+			else
 				printProgramList(&pS, 0);
 			continue;
 		}
 		// zapêtlanie wykonywania wybranego programu
 		else if (!strcmp("loop", arg))
 		{
-			char exitCheck[5] = "null\0";			
+			char exitCheck[5] = "null\0";
 			selectedPS = findProgramContent(&pS, wN, pN);
 			do
 			{
 				selectedPS.pPtr();
-				printf("\n");			
+				printf("\n");
 				fgets(exitCheck, 5, stdin);
-			// wychodzi jeœli wprowadzono w wywo³anej funkcji argument 'exit', ktory znajduje sie w stdin
-			} while ( strcmp("exit\0", exitCheck) );
+				// wychodzi jeœli wprowadzono w wywo³anej funkcji argument 'exit', ktory znajduje sie w stdin
+			} while (strcmp("exit\0", exitCheck));
 			continue;
 		}
 		// informacje programu o konkretnym numerze
@@ -250,12 +245,27 @@ int programCMain()
 			//rysujMain();
 			continue;
 		}
+		// testowanie w¹tków
+		else if (!strcmp("thread", arg))
+		{
+
+		}
 		// informacja o rozmiarach typow danych komputera
 		else if (!strcmp("tinfo", arg))
 		{
 			//Wskazniki3();
 			primitiveTypesSizeInfo();
 			continue;
+		}
+		// testowanie funkcji zamieniaj¹cych
+		else if (!strcmp("swaptest", arg))
+		{
+			swapFuncTest();
+		}
+		// testowanie czytania z pliku csv
+		else if (!strcmp("csvtab", arg))
+		{
+			csvtab();
 		}
 		// przerywa program, jeœli wpisano "exit"
 		else if (!strcmp("exit", arg))
