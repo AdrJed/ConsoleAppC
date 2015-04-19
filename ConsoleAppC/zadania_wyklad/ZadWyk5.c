@@ -131,10 +131,10 @@ void Wyk5Zad3()
 #undef T_SIZE
 }
 /* 5.4. Napisz funkcjê wyznaczaj¹c¹ pierwiastki równania kwadratowego. Dla danych wartoœci wspó³czynników a, b, c funkcja zwraca strukturê zawieraj¹c¹ informacjê o iloœci miejsc zerowych oraz wartoœci znalezionych pierwiastków (miejsc zerowych). */
-struct fKwadratowa {
+typedef struct _fKwadratowa {
 	float a, b, c, x1, x2, x0, delta;
-};
-struct fKwadratowa rKwadratowe(struct fKwadratowa f)
+} fKwadratowa;
+fKwadratowa rKwadratowe(fKwadratowa f)
 {
 	f.delta = (f.b * f.b) - (4 * f.a * f.c);
 
@@ -158,7 +158,7 @@ struct fKwadratowa rKwadratowe(struct fKwadratowa f)
 }
 void Wyk5Zad4()
 {
-	struct fKwadratowa fK;
+	fKwadratowa fK;
 
 	printf("Podaj wspolczynniki a b c:");
 	scanf("%f %f %f", &fK.a, &fK.b, &fK.c);
@@ -217,13 +217,13 @@ void Wyk5Zad5()
 #undef wTabMax
 }
 /* 5.6. Napisz funkcjê, która dla danej tablicy zawieraj¹cej n liczb zmiennopozycyjnych zwróci strukturê zwracaj¹c¹ wartoœæ maksymaln¹ oraz minimaln¹ z tablicy. Postaraj siê zaimplementowaæ algorytm wyszukiwania w sposób optymalny, tak aby wykonaæ minimaln¹ liczbê operacji porównania. */
-struct minMaxTab
+typedef struct _minMaxTab
 {
 	float min, max;
-};
-struct minMaxTab szukajMinMaxWTablicy(float fTab[], const int tSize)
+} minMaxTab;
+minMaxTab szukajMinMaxWTablicy(float fTab[], const int tSize)
 {
-	struct minMaxTab minMax;
+	minMaxTab minMax;
 
 	minMax.min = fTab[0];
 	minMax.max = fTab[0];
@@ -247,7 +247,7 @@ void Wyk5Zad6()
 #define T_SIZE 10
 
 	float fTab[T_SIZE] = { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
-	struct minMaxTab minMax;
+	minMaxTab minMax;
 
 	printf("Podaj liczby do tablicy:\n");
 	for (int i = 0; i < T_SIZE; i++)
@@ -443,35 +443,35 @@ void Wyk5Zad7()
 
 /* 5.8 Zaimplementuj zestaw funkcji realizuj¹cych podstawowe operacje na liczbach zespolonych(dodawanie, odejmowanie, mno¿enie, modu³).Liczby zespolone reprezentuj za pomoc¹ odpowiednich struktur.
 	Napisz program wczytuj¹cy dwie liczby urojone i wyœwietlaj¹cy wyniki operacji dodawania i mno¿enia tych dwóch liczb. */
-struct compl
+typedef struct _compl
 {
 	int re; //czêœæ rzeczywista
 	int im; //czêœæ urojona
-};
-struct compl addCompl(struct compl a, struct compl b)
+}compl;
+compl addCompl(compl a, compl b)
 {
-	struct compl result;
+	compl result;
 	result.re = a.re + b.re;
 	result.im = a.im + b.im;
 	return result;
 }
-struct compl subtractCompl(struct compl a, struct compl b)
+compl subtractCompl(compl a, compl b)
 {
-	struct compl result;
+	compl result;
 	result.re = a.re - b.re;
 	result.im = a.im - b.im;
 	return result;
 }
-struct compl multiplyCompl(struct compl a, struct compl b)
+compl multiplyCompl(compl a, compl b)
 {
-	struct compl result;
+	compl result;
 	result.re = (a.re * b.re) + (-1 * a.im * b.im);
 	result.im = (a.re * b.im) + (b.re * a.im);
 	return result;
 }
 void Wyk5Zad8()
 {
-	struct compl c1, c2, result;
+	compl c1, c2, result;
 
 	printf("Podaj dwie liczby urojone, np. -3 4i 6 -2i.\n");
 	printf("Re i Re i: ");
@@ -486,44 +486,44 @@ void Wyk5Zad8()
 }
 /* 5.9 Zaimplementuj zestaw funkcji realizuj¹cych podstawowe operacje na u³amkach(dodawanie, odejmowanie, mno¿enie, dzielenie).U³amki reprezentuj za pomoc¹ odpowiednich struktur.
 	Napisz program wczytuj¹cy dwa u³amki i wyœwietlaj¹cy wyniki operacji dodawania, odejmowania, mno¿enia i dzielenia u³amków.Zadbaj o to, aby wyœwietlane u³amki by³y zawsze sprowadzone do najprostszej postaci. */
-struct fraction
+typedef struct _fraction
 {
 	int l; //licznik
 	int m; //mianownik
-};
-void reduceFraction(struct fraction *f)
+} fraction;
+void reduceFraction(fraction *f)
 {
 };
-struct fraction addFraction(struct fraction f1, struct fraction f2)
+fraction addFraction(fraction f1, fraction f2)
 {
-	struct fraction result;
+	fraction result;
 	result.l = f1.l*f2.m + f2.l*f1.m;
 	result.m = f1.m * f2.m;
 
 	reduceFraction(&result);
 	return result;
 }
-struct fraction subtractFraction(struct fraction f1, struct fraction f2)
+fraction subtractFraction(fraction f1, fraction f2)
 {
-	struct fraction result;
+	fraction result;
 	result.l = f1.l*f2.m - f2.l*f1.m;
 	result.m = f1.m * f2.m;
 
 	reduceFraction(&result);
 	return result;
 }
-struct fraction multiplyFraction(struct fraction f1, struct fraction f2)
+fraction multiplyFraction(fraction f1, fraction f2)
 {
-	struct fraction result;
+	fraction result;
 	result.l = f1.l * f2.l;
 	result.m = f1.m * f2.m;
 
 	reduceFraction(&result);
 	return result;
 }
-struct fraction divideFraction(struct fraction f1, struct fraction f2)
+fraction divideFraction(fraction f1, fraction f2)
 {
-	struct fraction result;
+	fraction result;
 	result.l = f1.l * f2.m;
 	result.m = f2.m * f1.l;
 
@@ -532,7 +532,7 @@ struct fraction divideFraction(struct fraction f1, struct fraction f2)
 }
 void Wyk5Zad9()
 {
-	struct fraction f1, f2, addf, subf, mulf, divf;
+	fraction f1, f2, addf, subf, mulf, divf;
 
 	printf("Podaj ulamki na ktorych wykonac dzialania, np: 3/4 -5/6\n");
 	printf("a/b b/c: "); scanf("%d/%d %d/%d", &f1.l, &f1.m, &f2.l, &f2.m);

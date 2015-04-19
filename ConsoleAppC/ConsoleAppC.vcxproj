@@ -82,7 +82,6 @@
     <ClCompile Include="inne\csvTab.c" />
     <ClCompile Include="inne\skoczekSzachowy.c" />
     <ClCompile Include="inne\ZadInne.c" />
-    <ClCompile Include="jprDrzewa.c" />
     <ClCompile Include="macierze\macierze2.c" />
     <ClCompile Include="ProgramC.c" />
     <ClCompile Include="rysowanie\RysujMain.c" />
