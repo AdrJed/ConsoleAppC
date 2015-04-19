@@ -125,8 +125,9 @@ void addProgramContent(ProgramContent pS[], int p)
 		//[] = { 6, 2, Wyk6Zad2, "6.2 - " },
 		[38] = { 6, 3, Wyk6Zad3, "6.3 - odwracanie elementow w tablicy" },
 		[39] = { 7, 1, Wyk7Zad1, "7.1 - zamiana z systemu binarnego w dziesietny" },
-		[40] = { 8, 1, Wyk8Zad1, "8.1 - lista znakow ASCII" },
-		[41] = { 9, 2, Wyk9Zad2, "9.2 - zapis losowych liczb do pliku" },
+		[40] = { 7, 2, Wyk7Zad2, "7.2 - zamiana z binarnego w unsigned int"},
+		[41] = { 8, 1, Wyk8Zad1, "8.1 - lista znakow ASCII" },
+		[42] = { 9, 2, Wyk9Zad2, "9.2 - zapis losowych liczb do pliku" },
 		[PROG_COUNT] = { 0, 0, brakProgramu, "koniec listy" },
 	};
 

@@ -90,9 +90,6 @@
     <ClCompile Include="inne\csvTab.c">
       <Filter>Source Files\Inne</Filter>
     </ClCompile>
-    <ClCompile Include="jprDrzewa.c">
-      <Filter>Source Files\JPR</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h">

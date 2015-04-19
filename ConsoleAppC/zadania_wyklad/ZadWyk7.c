@@ -78,14 +78,39 @@ void Wyk7Zad1()
 }
 /* 7.2 Zaimplementuj program zamieniaj¹cy ci¹g zer i jedynek na liczbê w systemie dziesiêtnym zak³adaj¹c,
 	¿e ci¹g bitów koduje liczbê ca³kowit¹ ze znakiem w reprezentacji uzupe³nieniowej do dwóch U2.*/
-int U2ToDec(char *U2)
+unsigned int U2ToDec(const char *U2, int length)
 {
+	unsigned int out = 0;
+	int size = sizeof(unsigned int);
+	size *= 8;
+	length -= 1;
+
+	for (int i = 0; i < length; i++)
+	{
+		if (U2[i] == '0')
+			out &= ~(1 << length-i);
+		else if (U2[i] == '1')
+			out |= 1 << length-i;
+	}
+
+	return out;
 
 }
 void Wyk7Zad2()
 {
 
+	main00();
+	return;
+	unsigned int result = 0;
+	char bits[33] = { '\0' };
+	printf("Podaj liczbe bitowa: ");
+	scanf("%s", bits);
+	printf("\n %s \n", bits);
+
+	result = U2ToDec(bits, strlen(bits));
+	printf("\n wynik to: %d", result);
 }
+
 /* 7.3 Zaimplementuj program zamieniaj¹cy ci¹g 32 bitów(zer i jedynek) na liczbê rzeczywist¹ zak³adaj¹c,
 	¿e ci¹g bitów koduje liczbê zmiennopozycyjn¹ pojedynczej precyzji zgodnie ze standardem IEEE 754.*/
 float bit32ToFloat(char *bit32)
